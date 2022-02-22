@@ -194,7 +194,7 @@ span.subtitle {
   background-color: var(--color-primary);
   text-align: center;
   color: #fff;
-  transition: width 500ms, height 500ms, padding 200ms;
+  transition: width 500ms, height 500ms, padding 200ms, background-color 150ms;
 }
 
 .action-button:focus > .icon,
