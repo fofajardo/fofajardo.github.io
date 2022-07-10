@@ -4,6 +4,7 @@
   --color-primary: #000;
   --color-accent: #0267cb;
   --page-background: #fff;
+  --page-text-color: #000;
   --page-font: "Red Hat Display", "Helvetica", "Segoe UI", "Roboto", sans-serif;
   --max-distance: 62.5rem;
 }
@@ -11,7 +12,7 @@
 html {
   font-family: var(--page-font);
   background: var(--page-background);
-  color: var(--color-primary);
+  color: var(--page-text-color);
 }
 
 body {
@@ -152,7 +153,7 @@ span.subtitle {
   border-radius: 99999em;
   background-color: var(--color-primary);
   text-align: center;
-  color: #fff;
+  color: var(--page-background);
   transition: width 500ms, height 500ms, padding 200ms, background-color 150ms;
 }
 
@@ -163,7 +164,7 @@ span.subtitle {
 
 .action-button > .label {
   transition: font-size 500ms;
-  color: var(--color-primary);
+  color: var(--page-text-color);
 }
 
 .action-button:focus > .label,
