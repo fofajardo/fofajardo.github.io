@@ -276,7 +276,7 @@ th {
   margin: 1em 0;
   padding: 1em;
   border-radius: 12px;
-  background: #fff;
+  background: var(--page-background);
   color: #000;
   gap: 1em;
 }
