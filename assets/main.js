@@ -172,15 +172,13 @@ var gSite = {
             for (let k = 0; k < entry.points.length; k++) {
                 point = entry.points[k];
                 pointListItem = create("li");
-                // TODO: Use markdown parser instead of raw HTML
-                pointListItem.innerHTML = point;
+                pointListItem.innerHTML = await parseMarkdown(point);
                 detailPoints.appendChild(pointListItem);
             }
             detailBox.appendChild(detailPoints);
 
             if ("extraInfo" in entry) {
-                // TODO: Use markdown parser instead of raw HTML
-                detailBox.innerHTML += entry.extraInfo;
+                detailBox.innerHTML += await parseMarkdown(entry.extraInfo);
             }
 
             projectSet.appendChild(card);

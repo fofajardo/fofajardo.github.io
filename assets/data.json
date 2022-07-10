@@ -32,7 +32,7 @@
                 "Developed a system for handling test results and vaccination records, primarily focused on COVID-19, that allowed people to verify the authenticity of these documents.",
                 "Integrated many useful features, such as the ability to scan QR codes from vaccination records and test results."
             ],
-            "extraInfo": "You may use this <a href=\"assets/kodatos_qr.png\" target=\"_blank\">QR code</a> or the following reference code to test the platform: <span class=\"mono\">C4FC9ABF22B55E23</span>.",
+            "extraInfo": "You may use this [QR code](assets/kodatos_qr.png) or the following reference code to test the platform: `C4FC9ABF22B55E23`.",
             "preview": "5.png"
         },
         {
@@ -44,10 +44,10 @@
             "dateEnd": "June 2021",
             "technologies": ["java"],
             "points": [
-                "Wrote a text-based interactive fiction computer game with a team, similar to the popular computer games of the late 70s like <a href=\"https://en.wikipedia.org/wiki/Zork\">Zork</a>",
-                "Developed \"Statesman\", a text adventure game system with a fully-featured scripting system, which means that the commands, interactions, text, and related resources are not hardcoded into the game and are instead read externally from the file system and parsed on runtime."
+                "Wrote a text-based interactive fiction computer game with a team, similar to the popular computer games of the late 70s like [Zork](https://en.wikipedia.org/wiki/Zork)",
+                "Developed Statesman, a text adventure game system with a fully-featured scripting system, which means that the commands, interactions, text, and related resources are not hardcoded into the game and are instead read externally from the file system and parsed on runtime."
             ],
-            "extraInfo": "<a href=\"https://github.com/Lupalop/Statesman\">Statesman</a>, programmed by yours truly, is <span class=\"fw-bold\">open source</span>. Likewise, the Statesman Script Language is documented <a href=\"https://github.com/Lupalop/Statesman/blob/master/docs/script.md\">here</a>.",
+            "extraInfo": "[Statesman](https://github.com/Lupalop/Statesman), programmed by yours truly, is **open source**. Likewise, the Statesman Script Language is documented [here](https://github.com/Lupalop/Statesman/blob/master/docs/script.md).",
             "preview": "4.png"
         },
         {
@@ -89,7 +89,7 @@
                 "Wrote a simple game engine on top of MonoGame that handles most of the general functions from game logic to the user interface used in a video game.",
                 "Programmed a prototype video game that aims to raise disaster preparedness and awareness among children."
             ],
-            "extraInfo": "<a href=\"https://github.com/Lupalop/Maquina\">Maquina</a> is the game engine which was developed as part of this project.",
+            "extraInfo": "[Maquina](https://github.com/Lupalop/Maquina) is the game engine which was developed as part of this project.",
             "preview": "1.png"
         }
     ]
