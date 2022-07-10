@@ -327,6 +327,13 @@ th {
   .card > .card-preview {
     order: 2;
   }
+
+  .card-preview-placeholder.missing,
+  .card > .card-preview img {
+    height: auto;
+    width: auto;
+    max-width: 100%;
+  }
 }
 
 /**/
