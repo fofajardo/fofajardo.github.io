@@ -162,7 +162,7 @@ var gSite = {
                     techFriendlyName = technologies[techName];
                 }
                 detailTechList.innerText += techFriendlyName;
-                if (j <= entry.technologies.length - 1) {
+                if (j < entry.technologies.length - 1) {
                     detailTechList.innerText += ", ";
                 }
             }
