@@ -2,7 +2,7 @@
 
 :root {
   --color-primary: #000;
-  --color-accent: #616161;
+  --color-accent: #0267cb;
   --page-background: #fff;
   --page-font: "Red Hat Display", "Helvetica", "Segoe UI", "Roboto", sans-serif;
   --max-distance: 62.5rem;
@@ -101,7 +101,7 @@ span.subtitle {
 }
 
 .bg.cl1 {
-  background: rgba(0,0,0,0.8);
+  background: var(--color-accent);
   color: #fff;
 }
 
