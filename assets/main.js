@@ -200,11 +200,11 @@ var gSite = {
 
     onLoad: async function () {
         await gSite.buildProjects();
+        gSite.doneLoading();
     },
 
     onDeferredLoad: function () {
         gSite.initViewer();
-        gSite.doneLoading();
     },
 
     doneLoading: function () {
