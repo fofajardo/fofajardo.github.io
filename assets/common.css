@@ -48,11 +48,11 @@ span.subtitle {
   font-size: 0.8em;
 }
 
-.picture {
+.image {
   margin: 0.5em;
 }
 
-.picture.small {
+.image.small {
   border-radius: 9999em;
   width: 100px;
   height: 100px;
