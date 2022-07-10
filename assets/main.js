@@ -94,7 +94,7 @@ var gSite = {
             if ("preview" in entry) {
                 let previewBox = createBox("card-preview");
                 let previewPlaceholder = createBox("card-preview-placeholder");
-                let previewImage = create("img");
+                let previewImage = create("img", "img-uiv");
                 // TODO: implement gallery view
                 previewImage.src = `assets/images/previews/${entry.preview}`;
                 previewImage.onerror = function () {
@@ -180,9 +180,30 @@ var gSite = {
         }
     },
 
+    initViewer: function () {
+        if (gSite.viewerInitialized) {
+            return;
+        }
+
+        let uvElements = document.getElementsByClassName("img-uiv");
+        for (let i = 0; i < uvElements.length; i++) {
+            const imageViewer = new Viewer(
+                uvElements[i],
+                {
+                    inline: false,
+                    title: false,
+                }
+            );
+        }
+        gSite.viewerInitialized = true;
+    },
+
     onLoad: async function () {
         await gSite.buildProjects();
+    },
 
+    onDeferredLoad: function () {
+        gSite.initViewer();
         gSite.doneLoading();
     },
 
@@ -201,3 +222,4 @@ var gSite = {
 };
 
 window.addEventListener("DOMContentLoaded", gSite.onLoad);
+window.addEventListener("load", gSite.onDeferredLoad);
