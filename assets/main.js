@@ -88,6 +88,15 @@ function createTitleLink(aTitle, aUrl) {
     return titleAnchor;
 }
 
+async function parseMarkdown(aText) {
+    let parsedValue = "";
+    await System.import("./assets/libs/marked/marked.min.js")
+        .then(function () {
+            parsedValue = marked.parse(aText);
+        });
+    return parsedValue;
+}
+
 var gSite = {
     buildProjects: async function () {
         let data = await gAPI.getProjects();
