@@ -71,23 +71,6 @@ function createBox(aClass = "", aId = "") {
     return create("div", aClass, aId);
 }
 
-function createTitleLink(aTitle, aUrl) {
-    let titleAnchor = create("a", "header-link");
-    let titleText = create("span");
-    titleText.innerText = aTitle;
-    titleAnchor.appendChild(titleText);
-
-    if (aUrl) {
-        titleAnchor.target = "_blank";
-        titleAnchor.href = aUrl;
-        linkIcon = create("span", "link-icon iconify");
-        linkIcon.dataset.icon = "mdi:open-in-new";
-        titleAnchor.appendChild(linkIcon);
-    }
-
-    return titleAnchor;
-}
-
 async function parseMarkdown(aText) {
     let parsedValue = "";
     await System.import("./assets/libs/marked/marked.min.js")
@@ -129,8 +112,20 @@ var gSite = {
             let detailTitle = createBox("card-header");
             detailBox.appendChild(detailTitle);
 
-            let detailTitleLink = createTitleLink(entry.title, entry.url);
+            let detailTitleLink = create("a", "header-link");
             detailTitle.appendChild(detailTitleLink);
+
+            let detailTitleText = create("span");
+            detailTitleText.innerText = entry.title;
+            detailTitleLink.appendChild(detailTitleText);
+            if (entry.url) {
+                detailTitleLink.target = "_blank";
+                detailTitleLink.href = entry.url;
+                linkIcon = create("span", "link-icon iconify");
+                linkIcon.dataset.icon = "mdi:open-in-new";
+                detailTitleLink.appendChild(linkIcon);
+            }
+
             let detailDuration = create("span");
             if (entry.dateStart) {
                 detailDuration.innerText += entry.dateStart;
