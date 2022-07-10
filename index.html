@@ -10,6 +10,8 @@
         <meta property="og:title" content="Francis Fajardo">
         <meta property="og:description" content="Francis Fajardo's User Page">
         <meta name="description" content="Francis Fajardo's User Page">
+        <!-- Local scripts -->
+        <script src="assets/main.js"></script>
         <!-- External resources -->
         <script src="https://code.iconify.design/2/2.0.4/iconify.min.js"></script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,7 +24,6 @@
                 <div id="section-front-page" class="content-layout center">
                     <img class="picture small" src="assets/profile.jpg" width="100" height="100"/>
                     <span class="title">Francis Fajardo</span>
-                    <!-- TBD: <span class="subtitle"></span> -->
                     <div id="actions-social">
                         <ul class="group-ab">
                             <li>
@@ -76,122 +77,7 @@
             <section class="bg cl1">
                 <div id="section-projects" class="content-layout">
                     <h1>Projects</h1>
-                    <div class="card">
-                        <div class="card-header">
-                            <a href="https://github.com/fofajardo/project-elections" target="_blank" class="header-link">
-                                Halal (aka Project Elections)
-                                <span class="link-icon iconify" data-icon="mdi:open-in-new"></span>
-                            </a>
-                            <span>February 2022 - March 2022</span>
-                        </div>
-                        <span>COVID-19 vaccination/test records platform</span><br/>
-                        <span class="fw-bold">Technologies used: </span>Java/Jakarta EE, HTML, CSS, JS, MySQL
-                        <ul>
-                            <li>
-                                Developed and documented a voting or polling system, primarily patterned against the Philippine Elections, that adheres to the model-view-controller (MVC) architecture.
-                            </li>
-                            <li>
-                                Implemented several features, including a completely configurable source of candidates, positions, political parties, and party lists.
-                            </li>
-                            <li>
-                                Designed a user interface that is modern, responsive, and appealing.
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="card">
-                        <div class="card-header">
-                            <a href="https://kodatos.herokuapp.com/" target="_blank" class="header-link">
-                                KoDatos
-                                <span class="link-icon iconify" data-icon="mdi:open-in-new"></span>
-                            </a>
-                            <span>November 2021</span>
-                        </div>
-                        <span>COVID-19 vaccination/test records platform</span><br/>
-                        <span class="fw-bold">Technologies used: </span>PHP, HTML, CSS, JS, MySQL, PWA
-                        <ul>
-                            <li>
-                                Developed a system for handling test results and vaccination records, primarily focused on COVID-19, that allowed people to verify the authenticity of these documents.
-                            </li>
-                            <li>
-                                Integrated many useful features, such as the ability to scan QR codes from vaccination records and test results.
-                            </li>
-                        </ul>
-                        You may use this <a href="assets/kodatos_qr.png" target="_blank">QR code</a> or the following reference code to test the platform: <span class="mono">C4FC9ABF22B55E23</span>.
-                    </div>
-                    <div class="card">
-                        <div class="card-header">
-                            <a href="https://github.com/Lupalop/PacificLiberty" target="_blank" class="header-link">
-                                Pacific Liberty
-                                <span class="link-icon iconify" data-icon="mdi:open-in-new"></span>
-                            </a>
-                            <span>May 2021 - June 2021</span>
-                        </div>
-                        <span>Interactive Fiction Computer Game</span><br/>
-                        <span class="fw-bold">Technologies used: </span>Java
-                        <ul>
-                            <li>
-                                Wrote a text-based interactive fiction computer game with a team, similar to the popular computer games of the late 70s like <a href="https://en.wikipedia.org/wiki/Zork">Zork</a>.
-                            </li>
-                            <li>
-                                Developed "Statesman", a text adventure game system with a fully-featured scripting system, which means that the commands, interactions, text, and related resources are not hardcoded into the game and are instead read externally from the file system and parsed on runtime.
-                            </li>
-                        </ul>
-                        <a href="https://github.com/Lupalop/Statesman">Statesman</a>, programmed by yours truly, is <span class="fw-bold">open source</span>. Likewise, the Statesman Script Language is documented <a href="https://github.com/Lupalop/Statesman/blob/master/docs/script.md">here</a>.
-                    </div>
-                    <div class="card">
-                        <div class="card-header">
-                            <a href="https://angyakan.herokuapp.com/" target="_blank" class="header-link">
-                                Yakan
-                                <span class="link-icon iconify" data-icon="mdi:open-in-new"></span>
-                            </a>
-                            <span>June 2021</span>
-                        </div>
-                        <span>Blog/CMS</span><br/>
-                        <span class="fw-bold">Technologies used: </span>PHP, HTML, CSS, JS, Markdown
-                        <ul>
-                            <li>
-                                Devised a content management system (CMS) that does not use a traditional database and instead relies on locally stored files for content written in Markdown.
-                            </li>
-                            <li>
-                                Designed a responsive web site UI for both desktop and mobile platforms.
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="card">
-                        <div class="card-header">
-                            <a href="https://github.com/fofajardo/fortschritt" target="_blank" class="header-link">
-                                Fortschritt
-                                <span class="link-icon iconify" data-icon="mdi:open-in-new"></span>
-                            </a>
-                            <span>April 2019</span>
-                        </div>
-                        <span>Learning Management System (LMS)</span><br/>
-                        <span class="fw-bold">Technologies used: </span>PHP, HTML, CSS, JS, Markdown
-                        <ul>
-                            <li>
-                                Wrote a learning management system (LMS) that features uploaded materials viewing, per-subject classes, social media-like groups, user profiles for students and teachers, and search functionality.
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="card">
-                        <div class="card-header">
-                            <a class="header-link">
-                                Get Saved
-                                <!-- <span class="link-icon iconify" data-icon="mdi:open-in-new"></span> -->
-                            </a>
-                            <span>March 2019 - April 2019</span>
-                        </div>
-                        <span>Prototype Video Game</span><br/>
-                        <span class="fw-bold">Technologies used: </span>C#, MonoGame
-                        <ul>
-                            <li>
-                                Wrote a simple game engine on top of MonoGame that handles most of the general functions from game logic to the user interface used in a video game.
-                            </li>
-                            <li>
-                                Programmed a prototype video game that aims to raise disaster preparedness and awareness among children.
-                            </li>
-                        </ul>
-                        <a href="https://github.com/Lupalop/Maquina">Maquina</a> is the game engine which was developed as part of this project.
+                    <div id="cardset-projects" class="cardset">
                     </div>
                 </div>
             </section>
