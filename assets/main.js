@@ -93,10 +93,15 @@ var gSite = {
             let card = createBox("card");
             if ("preview" in entry) {
                 let previewBox = createBox("card-preview");
-                let previewPlaceholder = createBox("card-preview-placeholder");
+                let previewPlaceholder = createBox("card-preview-placeholder phs");
                 let previewImage = create("img", "img-uiv");
                 // TODO: implement gallery view
                 previewImage.src = `assets/images/previews/${entry.preview}`;
+                previewImage.classList.add("loading");
+                previewImage.onload = function () {
+                    previewImage.classList.remove("loading");
+                    previewPlaceholder.classList.remove("phs");
+                };
                 previewImage.onerror = function () {
                     previewImage.hidden = true;
                     previewPlaceholder.classList.add("missing");
