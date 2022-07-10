@@ -1,8 +1,11 @@
 {
     "technologies": {
         "javaee": "Java/Jakarta EE",
+        "java": "Java",
+        "php": "PHP",
         "webstack": "HTML, CSS, JS",
-        "mysql": "MySQL"
+        "mysql": "MySQL",
+        "pwa": "Progressive Web App (PWA)"
     },
     "projects": [
         {
