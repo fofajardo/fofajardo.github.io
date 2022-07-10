@@ -102,9 +102,7 @@ span.subtitle {
 }
 
 .bg.cl1 {
-  /* border-width: 5px; */
   background: rgba(0,0,0,0.8);
-  /* background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(70,70,70,1) 100%); */
   color: #fff;
 }
 
@@ -269,24 +267,61 @@ th {
 /* ::::: cards ::::: */
 
 .card {
+  display: flex;
   margin: 1em 0;
   padding: 1em;
   border-radius: 12px;
   background: #fff;
   color: #000;
+  gap: 1em;
 }
 
-.card > .card-header {
+/* Fallback for browsers that don't support the gap property */
+@supports not (gap: 1em) {
+  .card > .card-preview {
+    margin-right: 1em;
+  }
+}
+
+.card > .card-detail > .card-header {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 }
 
 @media screen and (max-width: 425px) {
-  .card > .card-header {
+  .card > .card-detail > .card-header {
     flex-direction: column;
   }
 }
+
+.card-preview-placeholder.missing,
+.card > .card-preview img {
+  width: 200px;
+  height: 200px;
+  border-radius: 16px;
+  box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.1);
+  object-position: left center;
+  object-fit: cover;
+}
+
+.card-preview-placeholder.missing {
+  width: 200px;
+  height: 200px;
+}
+
+.missing {
+  background: #F0F0F0;
+}
+
+@media screen and (max-width: 596.5px) {
+  .card {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/**/
 
 .header-link {
   display: flex;

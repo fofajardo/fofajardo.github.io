@@ -1,0 +1,96 @@
+{
+    "technologies": {
+        "javaee": "Java/Jakarta EE",
+        "webstack": "HTML, CSS, JS",
+        "mysql": "MySQL"
+    },
+    "projects": [
+        {
+            "id": "elections",
+            "title": "Halal (aka Project Elections)",
+            "url": "https://github.com/fofajardo/project-elections",
+            "subtitle": "COVID-19 vaccination/test records platform",
+            "dateStart": "February 2022",
+            "dateEnd": "March 2022",
+            "technologies": ["javaee", "webstack", "mysql"],
+            "points": [
+                "Developed and documented a voting or polling system, primarily patterned against the Philippine Elections, that adheres to the model-view-controller (MVC) architecture.",
+                "Implemented several features, including a completely configurable source of candidates, positions, political parties, and party lists.",
+                "Designed a user interface that is modern, responsive, and appealing."
+            ],
+            "preview": "6.png"
+        },
+        {
+            "id": "kodatos",
+            "title": "KoDatos",
+            "url": "https://kodatos.herokuapp.com/",
+            "subtitle": "COVID-19 vaccination/test records platform",
+            "dateStart": "November 2021",
+            "dateEnd": "November 2021",
+            "technologies": ["php", "javaee", "webstack", "mysql", "pwa"],
+            "points": [
+                "Developed a system for handling test results and vaccination records, primarily focused on COVID-19, that allowed people to verify the authenticity of these documents.",
+                "Integrated many useful features, such as the ability to scan QR codes from vaccination records and test results."
+            ],
+            "extraInfo": "You may use this <a href=\"assets/kodatos_qr.png\" target=\"_blank\">QR code</a> or the following reference code to test the platform: <span class=\"mono\">C4FC9ABF22B55E23</span>.",
+            "preview": "5.png"
+        },
+        {
+            "id": "pacificliberty",
+            "title": "Pacific Liberty",
+            "url": "https://github.com/Lupalop/PacificLiberty",
+            "subtitle": "Interactive Fiction Computer Game",
+            "dateStart": "May 2021",
+            "dateEnd": "June 2021",
+            "technologies": ["java"],
+            "points": [
+                "Wrote a text-based interactive fiction computer game with a team, similar to the popular computer games of the late 70s like <a href=\"https://en.wikipedia.org/wiki/Zork\">Zork</a>",
+                "Developed \"Statesman\", a text adventure game system with a fully-featured scripting system, which means that the commands, interactions, text, and related resources are not hardcoded into the game and are instead read externally from the file system and parsed on runtime."
+            ],
+            "extraInfo": "<a href=\"https://github.com/Lupalop/Statesman\">Statesman</a>, programmed by yours truly, is <span class=\"fw-bold\">open source</span>. Likewise, the Statesman Script Language is documented <a href=\"https://github.com/Lupalop/Statesman/blob/master/docs/script.md\">here</a>.",
+            "preview": "4.png"
+        },
+        {
+            "id": "yakan",
+            "title": "Yakan",
+            "url": "https://angyakan.herokuapp.com/",
+            "subtitle": "Blog/CMS",
+            "dateStart": "June 2021",
+            "dateEnd": "June 2021",
+            "technologies": ["php", "webstack", "markdown"],
+            "points": [
+                "Devised a content management system (CMS) that does not use a traditional database and instead relies on locally stored files for content written in Markdown.",
+                "Designed a responsive web site UI for both desktop and mobile platforms."
+            ],
+            "preview": "3.png"
+        },
+        {
+            "id": "fortschritt",
+            "title": "Fortschritt",
+            "url": "https://github.com/fofajardo/fortschritt",
+            "subtitle": "Learning Management System (LMS)",
+            "dateStart": "April 2019",
+            "dateEnd": "April 2019",
+            "technologies": ["php", "webstack", "mysql", "markdown"],
+            "points": [
+                "Wrote a learning management system (LMS) that features uploaded materials viewing, per-subject classes, social media-like groups, user profiles for students and teachers, and search functionality."
+            ],
+            "preview": "2.png"
+        },
+        {
+            "id": "getsaved",
+            "title": "Get Saved",
+            "url": "",
+            "subtitle": "Prototype Video Game",
+            "dateStart": "March 2019",
+            "dateEnd": "April 2019",
+            "technologies": ["javaee", "webstack", "mysql"],
+            "points": [
+                "Wrote a simple game engine on top of MonoGame that handles most of the general functions from game logic to the user interface used in a video game.",
+                "Programmed a prototype video game that aims to raise disaster preparedness and awareness among children."
+            ],
+            "extraInfo": "<a href=\"https://github.com/Lupalop/Maquina\">Maquina</a> is the game engine which was developed as part of this project.",
+            "preview": "1.png"
+        }
+    ]
+}
