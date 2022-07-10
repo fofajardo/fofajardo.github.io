@@ -99,6 +99,13 @@ var gSite = {
                 previewImage.src = `assets/images/previews/${entry.preview}`;
                 previewImage.classList.add("loading");
                 previewImage.onload = function () {
+                    var imageViewer = new Viewer(
+                        previewImage,
+                        {
+                            inline: false,
+                            title: false,
+                        }
+                    );
                     previewImage.classList.remove("loading");
                     previewPlaceholder.classList.remove("phs");
                 };
@@ -185,31 +192,12 @@ var gSite = {
         }
     },
 
-    initViewer: function () {
-        if (gSite.viewerInitialized) {
-            return;
-        }
-
-        let uvElements = document.getElementsByClassName("img-uiv");
-        for (let i = 0; i < uvElements.length; i++) {
-            const imageViewer = new Viewer(
-                uvElements[i],
-                {
-                    inline: false,
-                    title: false,
-                }
-            );
-        }
-        gSite.viewerInitialized = true;
-    },
-
     onLoad: async function () {
         await gSite.buildProjects();
         gSite.doneLoading();
     },
 
     onDeferredLoad: function () {
-        gSite.initViewer();
     },
 
     doneLoading: function () {
