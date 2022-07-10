@@ -300,6 +300,10 @@ th {
   }
 }
 
+.card > .card-preview img {
+  cursor: pointer;
+}
+
 .card-preview-placeholder.missing,
 .card > .card-preview img {
   width: 200px;
