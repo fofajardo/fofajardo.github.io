@@ -54,8 +54,8 @@ span.subtitle {
 
 .image.small {
   border-radius: 9999em;
-  width: 100px;
-  height: 100px;
+  width: 128px;
+  height: 128px;
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2);
   border: 3px solid var(--color-primary);
 }
