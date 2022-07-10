@@ -1,4 +1,4 @@
-const URL_PROJECTS = "assets/projects.json";
+const URL_DATA = "assets/data.json";
 
 var gAPI = {
     request: async function (aUrl, aHeaders = new Headers()) {
@@ -46,13 +46,13 @@ var gAPI = {
         };
     },
 
-    _projects: null,
-    getProjects: async function () {
-        if (this._projects == null) {
-            let response = await this.request(URL_PROJECTS);
-            this._projects = response.json;
+    _data: null,
+    getData: async function () {
+        if (this._data == null) {
+            let response = await this.request(URL_DATA);
+            this._data = response.json;
         }
-        return this._projects;
+        return this._data;
     },
 };
 
@@ -99,7 +99,7 @@ async function parseMarkdown(aText) {
 
 var gSite = {
     buildProjects: async function () {
-        let data = await gAPI.getProjects();
+        let data = await gAPI.getData();
         let projects = data.projects;
         let technologies = data.technologies;
 
