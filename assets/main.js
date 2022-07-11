@@ -130,7 +130,7 @@ var gSite = {
             let detailTitleText = create("span");
             detailTitleText.innerText = entry.title;
             detailTitleLink.appendChild(detailTitleText);
-            if (entry.url) {
+            if ("url" in entry && entry.url) {
                 detailTitleLink.target = "_blank";
                 detailTitleLink.href = entry.url;
                 linkIcon = create("span", "link-icon iconify");
@@ -142,8 +142,8 @@ var gSite = {
             if (entry.dateStart) {
                 detailDuration.innerText += entry.dateStart;
             }
-            if (entry.dateEnd) {
-                if (entry.dateEnd != entry.dateStart) {
+            if ("dateEnd" in entry) {
+                if (entry.dateEnd) {
                     detailDuration.innerText += ` – ${entry.dateEnd}`;
                 }
             } else {

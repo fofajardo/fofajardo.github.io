@@ -29,7 +29,7 @@
             "url": "https://kodatos.herokuapp.com/",
             "subtitle": "COVID-19 vaccination/test records platform",
             "dateStart": "November 2021",
-            "dateEnd": "November 2021",
+            "dateEnd": "",
             "technologies": ["php", "javaee", "webstack", "mysql", "pwa"],
             "points": [
                 "Developed a system for handling test results and vaccination records, primarily focused on COVID-19, that allowed people to verify the authenticity of these documents.",
@@ -59,7 +59,7 @@
             "url": "https://angyakan.herokuapp.com/",
             "subtitle": "Blog/CMS",
             "dateStart": "June 2021",
-            "dateEnd": "June 2021",
+            "dateEnd": "",
             "technologies": ["php", "webstack", "markdown"],
             "points": [
                 "Devised a content management system (CMS) that does not use a traditional database and instead relies on locally stored files for content written in Markdown.",
@@ -73,7 +73,7 @@
             "url": "https://github.com/fofajardo/fortschritt",
             "subtitle": "Learning Management System (LMS)",
             "dateStart": "April 2019",
-            "dateEnd": "April 2019",
+            "dateEnd": "",
             "technologies": ["php", "webstack", "mysql", "markdown"],
             "points": [
                 "Wrote a learning management system (LMS) that features uploaded materials viewing, per-subject classes, social media-like groups, user profiles for students and teachers, and search functionality."
