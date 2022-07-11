@@ -80,6 +80,10 @@ async function parseMarkdown(aText) {
     return parsedValue;
 }
 
+function getPreviewUrl(aFileName) {
+    return `assets/images/previews/${aFileName}`;
+}
+
 var gSite = {
     buildProjects: async function () {
         let data = await gAPI.getData();
@@ -95,12 +99,26 @@ var gSite = {
                 let previewBox = createBox("card-preview");
                 let previewPlaceholder = createBox("card-preview-placeholder phs");
                 let previewImage = create("img", "img-uiv");
-                // TODO: implement gallery view
-                previewImage.src = `assets/images/previews/${entry.preview}`;
+                previewImage.src = getPreviewUrl(entry.preview);
                 previewImage.classList.add("loading");
                 previewImage.onload = function () {
-                    var imageViewer = new Viewer(
-                        previewImage,
+                    let imageViewer;
+                    let viewerTarget = previewImage;
+                    if ("previewset" in entry && entry.previewset) {
+                        viewerTarget = create("ul", "previewset");
+                        for (let img of entry.previewset) {
+                            let galleryImageListItem = create("li");
+                            let galleryImage = create("img");
+                            galleryImage.src = getPreviewUrl(img);
+                            galleryImageListItem.appendChild(galleryImage);
+                            viewerTarget.appendChild(galleryImageListItem);
+                        }
+                        previewImage.addEventListener("click", function () {
+                            imageViewer.show();
+                        });
+                    }
+                    imageViewer = new Viewer(
+                        viewerTarget,
                         {
                             inline: false,
                             title: false,
