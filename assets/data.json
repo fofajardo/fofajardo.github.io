@@ -5,9 +5,28 @@
         "php": "PHP",
         "webstack": "HTML, CSS, JS",
         "mysql": "MySQL",
-        "pwa": "Progressive Web App (PWA)"
+        "pwa": "Progressive Web App (PWA)",
+        "python": "Python",
+        "pygame": "Pygame"
     },
     "projects": [
+        {
+            "id": "dikta",
+            "title": "Dikta",
+            "subtitle": "Investigative Point and Click Game",
+            "url": "https://github.com/Lupalop/Dikta",
+            "dateStart": "May 2022",
+            "dateEnd": "June 2022",
+            "technologies": ["python", "pygame"],
+            "points": [
+                "Planned the game's concept and mechanics, from the main story to the branching interview mini-games.",
+                "Wrote the code for UI, gameplay, background music and sound effects handling, and saved game (de)serialization, among others.",
+                "Designed and edited all the scenes for the game's graphics.",
+                "Utilized Microsoft Azure Cognitive Services' [Text to Speech](https://azure.microsoft.com/en-us/services/cognitive-services/text-to-speech/#overview) API in generating the voices of the game's characters."
+            ],
+            "preview": "8.jpg",
+            "previewset": ["8a.png", "8b.png", "8c.png", "8d.png", "8e.png", "8f.png", "8g.png", "8h.png", "8i.png", "8j.png", "8k.png", "8l.png", "8m.png"]
+        },
         {
             "id": "agrikulturam",
             "title": "AgrikultuRAM",
