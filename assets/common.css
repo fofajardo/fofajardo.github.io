@@ -318,8 +318,8 @@ th {
   transition: opacity 1s;
   opacity: 1;
   box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.1);
-  object-position: left center;
-  object-fit: contain;
+  object-position: center center;
+  object-fit: cover;
 }
 
 .card > .card-preview img.loading {
