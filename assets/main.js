@@ -91,9 +91,7 @@ var gSite = {
         let technologies = data.technologies;
 
         let projectSet = $("cardset-projects");
-        for (let i = 0; i < projects.length; i++) {
-            let entry = projects[i];
-
+        for (let entry of projects) {
             let card = createBox("card");
             if ("preview" in entry) {
                 let previewBox = createBox("card-preview");
@@ -183,22 +181,21 @@ var gSite = {
             detailTechLabel.innerText = "Technologies: ";
             detailTech.appendChild(detailTechLabel);
             let detailTechList = create("span");
-            for (let j = 0; j < entry.technologies.length; j++) {
-                techName = entry.technologies[j];
+            for (let i = 0; i < entry.technologies.length; i++) {
+                techName = entry.technologies[i];
                 techFriendlyName = techName;
                 if (techName in technologies) {
                     techFriendlyName = technologies[techName];
                 }
                 detailTechList.innerText += techFriendlyName;
-                if (j < entry.technologies.length - 1) {
+                if (i < entry.technologies.length - 1) {
                     detailTechList.innerText += ", ";
                 }
             }
             detailTech.appendChild(detailTechList);
 
             var detailPoints = create("ul");
-            for (let k = 0; k < entry.points.length; k++) {
-                point = entry.points[k];
+            for (let point of entry.points) {
                 pointListItem = create("li");
                 pointListItem.innerHTML = await parseMarkdown(point);
                 detailPoints.appendChild(pointListItem);
