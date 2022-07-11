@@ -100,31 +100,41 @@ var gSite = {
                 previewImage.src = getPreviewUrl(entry.preview);
                 previewImage.classList.add("loading");
                 previewImage.addEventListener("load", function () {
-                    let imageViewer;
-                    let viewerTarget = previewImage;
                     if ("previewset" in entry && entry.previewset) {
-                        viewerTarget = create("ul", "previewset");
-                        for (let img of entry.previewset) {
-                            let galleryImageListItem = create("li");
-                            let galleryImage = create("img");
-                            galleryImage.src = getPreviewUrl(img);
-                            galleryImageListItem.appendChild(galleryImage);
-                            viewerTarget.appendChild(galleryImageListItem);
-                        }
-                        // Since Viewer.js will handle clicks for the hidden
-                        // viewer target instead of the preview image, we have
-                        // to set this manually instead.
+                        // Images will be loaded only on demand.
                         previewImage.addEventListener("click", function () {
-                            imageViewer.show();
+                            if (!previewImage.viewer) {
+                                let viewerTarget = create("ul", "previewset");
+                                for (let img of entry.previewset) {
+                                    let galleryImageListItem = create("li");
+                                    let galleryImage = create("img");
+                                    galleryImage.src = getPreviewUrl(img);
+                                    galleryImageListItem.appendChild(galleryImage);
+                                    viewerTarget.appendChild(galleryImageListItem);
+                                }
+                                previewImage.viewer = new Viewer(
+                                    viewerTarget,
+                                    {
+                                        inline: false,
+                                        title: false,
+                                    }
+                                );
+                            }
+                            // Since Viewer.js will handle clicks for the hidden
+                            // viewer target instead of the preview image, we have
+                            // to do this manually instead.
+                            previewImage.viewer.show();
                         });
+                    } else {
+                        let viewerTarget = previewImage;
+                        let viewer = new Viewer(
+                            viewerTarget,
+                            {
+                                inline: false,
+                                title: false,
+                            }
+                        );
                     }
-                    imageViewer = new Viewer(
-                        viewerTarget,
-                        {
-                            inline: false,
-                            title: false,
-                        }
-                    );
                     previewImage.classList.remove("loading");
                     previewPlaceholder.classList.remove("phs");
                 });
