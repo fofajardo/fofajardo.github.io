@@ -80,6 +80,10 @@ async function parseMarkdown(aText) {
     return parsedValue;
 }
 
+function getPreviewUrl(aFileName) {
+    return `assets/images/previews/${aFileName}`;
+}
+
 var gSite = {
     buildProjects: async function () {
         let data = await gAPI.getData();
@@ -87,32 +91,57 @@ var gSite = {
         let technologies = data.technologies;
 
         let projectSet = $("cardset-projects");
-        for (let i = 0; i < projects.length; i++) {
-            let entry = projects[i];
-
+        for (let entry of projects) {
             let card = createBox("card");
             if ("preview" in entry) {
                 let previewBox = createBox("card-preview");
                 let previewPlaceholder = createBox("card-preview-placeholder phs");
                 let previewImage = create("img", "img-uiv");
-                // TODO: implement gallery view
-                previewImage.src = `assets/images/previews/${entry.preview}`;
+                previewImage.src = getPreviewUrl(entry.preview);
                 previewImage.classList.add("loading");
-                previewImage.onload = function () {
-                    var imageViewer = new Viewer(
-                        previewImage,
-                        {
-                            inline: false,
-                            title: false,
-                        }
-                    );
+                previewImage.addEventListener("load", function () {
+                    if ("previewset" in entry && entry.previewset) {
+                        // Images will be loaded only on demand.
+                        previewImage.addEventListener("click", function () {
+                            if (!previewImage.viewer) {
+                                let viewerTarget = create("ul", "previewset");
+                                for (let img of entry.previewset) {
+                                    let galleryImageListItem = create("li");
+                                    let galleryImage = create("img");
+                                    galleryImage.src = getPreviewUrl(img);
+                                    galleryImageListItem.appendChild(galleryImage);
+                                    viewerTarget.appendChild(galleryImageListItem);
+                                }
+                                previewImage.viewer = new Viewer(
+                                    viewerTarget,
+                                    {
+                                        inline: false,
+                                        title: false,
+                                    }
+                                );
+                            }
+                            // Since Viewer.js will handle clicks for the hidden
+                            // viewer target instead of the preview image, we have
+                            // to do this manually instead.
+                            previewImage.viewer.show();
+                        });
+                    } else {
+                        let viewerTarget = previewImage;
+                        let viewer = new Viewer(
+                            viewerTarget,
+                            {
+                                inline: false,
+                                title: false,
+                            }
+                        );
+                    }
                     previewImage.classList.remove("loading");
                     previewPlaceholder.classList.remove("phs");
-                };
-                previewImage.onerror = function () {
+                });
+                previewImage.addEventListener("error", function () {
                     previewImage.hidden = true;
                     previewPlaceholder.classList.add("missing");
-                };
+                });
                 previewPlaceholder.appendChild(previewImage);
                 previewBox.appendChild(previewPlaceholder);
                 card.appendChild(previewBox);
@@ -130,7 +159,7 @@ var gSite = {
             let detailTitleText = create("span");
             detailTitleText.innerText = entry.title;
             detailTitleLink.appendChild(detailTitleText);
-            if (entry.url) {
+            if ("url" in entry && entry.url) {
                 detailTitleLink.target = "_blank";
                 detailTitleLink.href = entry.url;
                 linkIcon = create("span", "link-icon iconify");
@@ -142,8 +171,8 @@ var gSite = {
             if (entry.dateStart) {
                 detailDuration.innerText += entry.dateStart;
             }
-            if (entry.dateEnd) {
-                if (entry.dateEnd != entry.dateStart) {
+            if ("dateEnd" in entry) {
+                if (entry.dateEnd) {
                     detailDuration.innerText += ` – ${entry.dateEnd}`;
                 }
             } else {
@@ -162,22 +191,21 @@ var gSite = {
             detailTechLabel.innerText = "Technologies: ";
             detailTech.appendChild(detailTechLabel);
             let detailTechList = create("span");
-            for (let j = 0; j < entry.technologies.length; j++) {
-                techName = entry.technologies[j];
+            for (let i = 0; i < entry.technologies.length; i++) {
+                techName = entry.technologies[i];
                 techFriendlyName = techName;
                 if (techName in technologies) {
                     techFriendlyName = technologies[techName];
                 }
                 detailTechList.innerText += techFriendlyName;
-                if (j < entry.technologies.length - 1) {
+                if (i < entry.technologies.length - 1) {
                     detailTechList.innerText += ", ";
                 }
             }
             detailTech.appendChild(detailTechList);
 
             var detailPoints = create("ul");
-            for (let k = 0; k < entry.points.length; k++) {
-                point = entry.points[k];
+            for (let point of entry.points) {
                 pointListItem = create("li");
                 pointListItem.innerHTML = await parseMarkdown(point);
                 detailPoints.appendChild(pointListItem);
