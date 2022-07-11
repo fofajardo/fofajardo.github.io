@@ -101,7 +101,7 @@ var gSite = {
                 let previewImage = create("img", "img-uiv");
                 previewImage.src = getPreviewUrl(entry.preview);
                 previewImage.classList.add("loading");
-                previewImage.onload = function () {
+                previewImage.addEventListener("load", function () {
                     let imageViewer;
                     let viewerTarget = previewImage;
                     if ("previewset" in entry && entry.previewset) {
@@ -126,11 +126,11 @@ var gSite = {
                     );
                     previewImage.classList.remove("loading");
                     previewPlaceholder.classList.remove("phs");
-                };
-                previewImage.onerror = function () {
+                });
+                previewImage.addEventListener("error", function () {
                     previewImage.hidden = true;
                     previewPlaceholder.classList.add("missing");
-                };
+                });
                 previewPlaceholder.appendChild(previewImage);
                 previewBox.appendChild(previewPlaceholder);
                 card.appendChild(previewBox);
