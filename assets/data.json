@@ -20,7 +20,8 @@
                 "Submitted as part of the entry for the [Microsoft Imagine Cup Junior 2022](https://imaginecup.microsoft.com/en-us/junior).",
                 "Wrote the entry's section discussing the application of artificial intelligence (AI) in the app, detailing how it is useful in managing pests in agricultural scenarios, particularly banana plantations."
             ],
-            "preview": "7.png"
+            "preview": "7.jpg",
+            "previewset": ["7a.png", "7b.png", "7c.png", "7d.png", "7e.png"]
         },
         {
             "id": "elections",
@@ -35,7 +36,8 @@
                 "Implemented several features, including a completely configurable source of candidates, positions, political parties, and party lists.",
                 "Designed a user interface that is modern, responsive, and appealing."
             ],
-            "preview": "6.png"
+            "preview": "6.png",
+            "previewset": ["6a.png", "6b.png", "6c.png", "6d.png", "6e.png", "6f.png", "6g.png", "6h.png", "6i.png", "6j.png", "6k.png", "6l.png", "6m.png", "6n.png", "6o.png", "6p.png", "6q.png", "6r.png", "6s.png"]
         },
         {
             "id": "kodatos",
@@ -50,7 +52,8 @@
                 "Integrated many useful features, such as the ability to scan QR codes from vaccination records and test results."
             ],
             "extraInfo": "You may use this [QR code](assets/kodatos_qr.png) or the following reference code to test the platform: `C4FC9ABF22B55E23`.",
-            "preview": "5.png"
+            "preview": "5.jpg",
+            "previewset": ["5a.png", "5b.png", "5c.png", "5d.png", "5e.png", "5f.png", "5g.png", "5h.png", "5i.png", "5j.png", "5k.png", "5l.png", "5m.png", "5n.png"]
         },
         {
             "id": "pacificliberty",
@@ -65,7 +68,8 @@
                 "Developed Statesman, a text adventure game system with a fully-featured scripting system, which means that the commands, interactions, text, and related resources are not hardcoded into the game and are instead read externally from the file system and parsed on runtime."
             ],
             "extraInfo": "[Statesman](https://github.com/Lupalop/Statesman), programmed by yours truly, is **open source**. Likewise, the Statesman Script Language is documented [here](https://github.com/Lupalop/Statesman/blob/master/docs/script.md).",
-            "preview": "4.png"
+            "preview": "4.png",
+            "previewset": ["4f.png", "4a.png", "4b.png", "4c.png", "4d.png", "4e.png"]
         },
         {
             "id": "yakan",
@@ -79,7 +83,8 @@
                 "Devised a content management system (CMS) that does not use a traditional database and instead relies on locally stored files for content written in Markdown.",
                 "Designed a responsive web site UI for both desktop and mobile platforms."
             ],
-            "preview": "3.png"
+            "preview": "3.jpg",
+            "previewset": ["3a.jpg", "3b.png", "3c.png", "3d.png", "3e.png", "3f.png", "3g.png"]
         },
         {
             "id": "fortschritt",
@@ -92,7 +97,8 @@
             "points": [
                 "Wrote a learning management system (LMS) that features uploaded materials viewing, per-subject classes, social media-like groups, user profiles for students and teachers, and search functionality."
             ],
-            "preview": "2.png"
+            "preview": "2.jpg",
+            "previewset": ["2a.jpg", "2b.jpg", "2c.jpg"]
         },
         {
             "id": "getsaved",
@@ -107,7 +113,8 @@
                 "Programmed a prototype video game that aims to raise disaster preparedness and awareness among children."
             ],
             "extraInfo": "[Maquina](https://github.com/Lupalop/Maquina) is the game engine which was developed as part of this project.",
-            "preview": "1.png"
+            "preview": "1.jpg",
+            "previewset": ["1a.png", "1b.png", "1c.png", "1d.png", "1e.png", "1f.png", "1g.png", "1h.png", "1i.png", "1j.png", "1k.png"]
         }
     ]
 }
