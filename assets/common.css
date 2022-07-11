@@ -315,11 +315,16 @@ th {
 
 .card > .card-preview img {
   cursor: pointer;
-  transition: opacity 1s;
+  transition: opacity 1s, filter 500ms, transform 500ms;
   opacity: 1;
   box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.1);
   object-position: center center;
   object-fit: cover;
+}
+
+.card > .card-preview img:not(.loading):hover {
+  filter: brightness(0.8);
+  transform: scale(1.05);
 }
 
 .card > .card-preview img.loading {
