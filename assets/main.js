@@ -113,6 +113,9 @@ var gSite = {
                             galleryImageListItem.appendChild(galleryImage);
                             viewerTarget.appendChild(galleryImageListItem);
                         }
+                        // Since Viewer.js will handle clicks for the hidden
+                        // viewer target instead of the preview image, we have
+                        // to set this manually instead.
                         previewImage.addEventListener("click", function () {
                             imageViewer.show();
                         });
