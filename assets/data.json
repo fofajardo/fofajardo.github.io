@@ -7,7 +7,9 @@
         "mysql": "MySQL",
         "pwa": "Progressive Web App (PWA)",
         "python": "Python",
-        "pygame": "Pygame"
+        "pygame": "Pygame",
+        "csharp": "C#",
+        "mgxna": "MonoGame/XNA"
     },
     "projects": [
         {
@@ -127,7 +129,7 @@
             "subtitle": "Prototype Video Game",
             "dateStart": "March 2019",
             "dateEnd": "April 2019",
-            "technologies": ["javaee", "webstack", "mysql"],
+            "technologies": ["csharp", "mgxna"],
             "points": [
                 "Wrote a simple game engine on top of MonoGame that handles most of the general functions from game logic to the user interface used in a video game.",
                 "Programmed a prototype video game that aims to raise disaster preparedness and awareness among children."
