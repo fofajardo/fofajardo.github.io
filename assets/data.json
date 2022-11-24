@@ -100,7 +100,7 @@
             "subtitle": "Blog/CMS",
             "dateStart": "June 2021",
             "dateEnd": "",
-            "technologies": ["php", "webstack", "markdown"],
+            "technologies": ["php", "webstack"],
             "points": [
                 "Devised a content management system (CMS) that does not use a traditional database and instead relies on locally stored files for content written in Markdown.",
                 "Designed a responsive web site UI for both desktop and mobile platforms."
@@ -115,7 +115,7 @@
             "subtitle": "Learning Management System (LMS)",
             "dateStart": "April 2019",
             "dateEnd": "",
-            "technologies": ["php", "webstack", "mysql", "markdown"],
+            "technologies": ["php", "webstack", "mysql"],
             "points": [
                 "Wrote a learning management system (LMS) that features uploaded materials viewing, per-subject classes, social media-like groups, user profiles for students and teachers, and search functionality."
             ],
