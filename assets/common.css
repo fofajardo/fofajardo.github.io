@@ -34,15 +34,15 @@ body {
 }
 
 a {
-  text-decoration: none;
   color: var(--color-accent);
-  border-bottom: 2px solid var(--color-accent);
+  text-decoration: none;
+  font-weight: 600;
 }
 
 a:focus,
 a:hover {
   color: var(--color-primary);
-  border-color: var(--color-primary);
+  text-decoration: underline;
 }
 
 hr {
@@ -160,6 +160,10 @@ span.subtitle {
   border: none;
   background: none;
   padding: 0;
+}
+
+.action-button:hover {
+  text-decoration: none;
 }
 
 .action-button > .icon {
@@ -354,8 +358,6 @@ th {
   font-weight: bold;
   text-decoration: none;
   align-items: center;
-  border-bottom: 3px dotted transparent;
-  transition: border-color 200ms;
 }
 
 .header-link > .link-icon {
@@ -364,7 +366,7 @@ th {
 
 .header-link:hover {
   color: var(--color-accent);
-  border-color: var(--color-accent);
+  text-decoration: underline;
 }
 
 /* ::::: throbber ::::: */
