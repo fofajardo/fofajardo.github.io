@@ -73,7 +73,7 @@
                 "Developed a system for handling test results and vaccination records, primarily focused on COVID-19, that allowed people to verify the authenticity of these documents.",
                 "Integrated many useful features, such as the ability to scan QR codes from vaccination records and test results."
             ],
-            "extraInfo": "You may use this [QR code](assets/kodatos_qr.png) or the following reference code to test the platform: `C4FC9ABF22B55E23`.",
+            "_extraInfo": "You may use this [QR code](assets/kodatos_qr.png) or the following reference code to test the platform: `C4FC9ABF22B55E23`.",
             "preview": "5.jpg",
             "previewset": ["5a.png", "5b.png", "5c.png", "5d.png", "5e.png", "5f.png", "5g.png", "5h.png", "5i.png", "5j.png", "5k.png", "5l.png", "5m.png", "5n.png"]
         },
