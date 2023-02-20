@@ -64,7 +64,7 @@
         {
             "id": "kodatos",
             "title": "KoDatos",
-            "url": "https://kodatos.herokuapp.com/",
+            "url": "",
             "subtitle": "COVID-19 vaccination/test records platform",
             "dateStart": "November 2021",
             "dateEnd": "",
@@ -96,7 +96,7 @@
         {
             "id": "yakan",
             "title": "Yakan",
-            "url": "https://angyakan.herokuapp.com/",
+            "url": "",
             "subtitle": "Blog/CMS",
             "dateStart": "June 2021",
             "dateEnd": "",
