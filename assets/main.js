@@ -142,8 +142,18 @@ var gSite = {
                     previewImage.hidden = true;
                     previewPlaceholder.classList.add("missing");
                 });
+                
+                let iconBox = createBox("preview-icon-box");
+                iconBox.addEventListener("click", function () {
+                    previewImage.click();
+                });
+                let icon = create("span", "preview-icon iconify");
+                icon.dataset.icon = "mdi:image-multiple-outline";
+                iconBox.appendChild(icon);
+                
                 previewPlaceholder.appendChild(previewImage);
                 previewBox.appendChild(previewPlaceholder);
+                previewBox.appendChild(iconBox);
                 card.appendChild(previewBox);
             }
 
