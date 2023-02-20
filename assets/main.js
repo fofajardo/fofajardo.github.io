@@ -162,7 +162,7 @@ var gSite = {
             if ("url" in entry && entry.url) {
                 detailTitleLink.target = "_blank";
                 detailTitleLink.href = entry.url;
-                linkIcon = create("span", "link-icon iconify");
+                let linkIcon = create("span", "link-icon iconify");
                 linkIcon.dataset.icon = "mdi:open-in-new";
                 detailTitleLink.appendChild(linkIcon);
             }
