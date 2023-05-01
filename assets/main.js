@@ -92,7 +92,7 @@ var gSite = {
 
         let projectSet = $("cardset-projects");
         for (let entry of projects) {
-            let card = createBox("card");
+            let card = createBox("card", `project-${entry.id}`);
             if ("preview" in entry) {
                 let previewBox = createBox("card-preview");
                 let previewPlaceholder = createBox("card-preview-placeholder phs");
