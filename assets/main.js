@@ -62,8 +62,12 @@ function $(aId) {
 
 function create(aTagName, aClass = "", aId = "") {
     let element = document.createElement(aTagName);
-    element.className = aClass;
-    element.id = aId;
+    if (aClass != "") {
+        element.className = aClass;
+    }
+    if (aId != "") {
+        element.id = aId;
+    }
     return element;
 }
 
