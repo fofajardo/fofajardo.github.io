@@ -64,11 +64,11 @@
         {
             "id": "kodatos",
             "title": "KoDatos",
-            "url": "",
+            "url": "https://github.com/fofajardo/kodatos",
             "subtitle": "COVID-19 vaccination/test records platform",
             "dateStart": "November 2021",
             "dateEnd": "",
-            "technologies": ["php", "javaee", "webstack", "mysql", "pwa"],
+            "technologies": ["php", "webstack", "mysql", "pwa"],
             "points": [
                 "Developed a system for handling test results and vaccination records, primarily focused on COVID-19, that allowed people to verify the authenticity of these documents.",
                 "Integrated many useful features, such as the ability to scan QR codes from vaccination records and test results."
