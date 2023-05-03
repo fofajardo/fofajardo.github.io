@@ -125,9 +125,9 @@
         {
             "id": "getsaved",
             "title": "Get Saved",
-            "url": "",
+            "url": "https://github.com/Lupalop/GetSaved",
             "subtitle": "Prototype Video Game",
-            "dateStart": "March 2019",
+            "dateStart": "September 2018, March 2019",
             "dateEnd": "April 2019",
             "technologies": ["csharp", "mgxna"],
             "points": [
