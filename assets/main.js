@@ -170,18 +170,21 @@ var gSite = {
             let detailTitle = createBox("card-header");
             detailBox.appendChild(detailTitle);
 
-            let detailTitleLink = create("a", "header-link");
-            detailTitle.appendChild(detailTitleLink);
-
             let detailTitleText = create("span");
             detailTitleText.innerText = entry.title;
-            detailTitleLink.appendChild(detailTitleText);
+
             if ("url" in entry && entry.url) {
+                let detailTitleLink = create("a", "header-link");
                 detailTitleLink.target = "_blank";
                 detailTitleLink.href = entry.url;
                 let linkIcon = create("span", "link-icon iconify");
                 linkIcon.dataset.icon = "mdi:open-in-new";
+                detailTitleLink.appendChild(detailTitleText);
                 detailTitleLink.appendChild(linkIcon);
+                detailTitle.appendChild(detailTitleLink);
+            } else {
+                detailTitleText.classList.add("header-link");
+                detailTitle.appendChild(detailTitleText);
             }
 
             let detailDuration = create("span");

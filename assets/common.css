@@ -412,7 +412,7 @@ th {
   margin-left: 0.25em;
 }
 
-.header-link:hover {
+a.header-link:hover {
   color: var(--color-accent);
   text-decoration: underline;
 }
