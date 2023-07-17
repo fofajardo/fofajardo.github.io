@@ -96,8 +96,27 @@ var gSite = {
             if ("preview" in entry) {
                 let previewBox = createBox("card-preview");
                 let previewPlaceholder = createBox("card-preview-placeholder phs");
+
+                // Preview picture: image and its alternate sources.
+                let previewPicture = create("picture");
+                previewPlaceholder.appendChild(previewPicture);
+
+                let baseSourceUrl = `assets/images/previews/${entry.preview}`;
+
+                let previewWebpSource = create("source");
+                previewWebpSource.type = "image/webp";
+                previewWebpSource.srcset = `${baseSourceUrl}.webp`;
+                previewPicture.appendChild(previewWebpSource);
+
+                let previewJpegSource = create("source");
+                previewJpegSource.type = "image/jpeg";
+                previewJpegSource.srcset = `${baseSourceUrl}.jpg`;
+                previewPicture.appendChild(previewJpegSource);
+
                 let previewImage = create("img", "img-uiv", "", `${entry.title} preview image`);
-                previewImage.src = `assets/images/previews/${entry.preview}`;
+                previewImage.width = "200";
+                previewImage.height = "200";
+                previewImage.src = `${baseSourceUrl}.jpg`;
                 previewImage.classList.add("loading");
                 previewImage.addEventListener("load", async function () {
                     previewImage.addEventListener("click", function () {
@@ -110,7 +129,9 @@ var gSite = {
                     previewImage.hidden = true;
                     previewPlaceholder.classList.add("missing");
                 });
-                
+                previewPicture.appendChild(previewImage);
+
+                // View the entire preview set button.
                 let iconBox = createBox("preview-icon-box");
                 iconBox.addEventListener("click", function () {
                     previewImage.click();
@@ -119,7 +140,6 @@ var gSite = {
                 icon.dataset.icon = "mdi:image-multiple-outline";
                 iconBox.appendChild(icon);
                 
-                previewPlaceholder.appendChild(previewImage);
                 previewBox.appendChild(previewPlaceholder);
                 previewBox.appendChild(iconBox);
                 card.appendChild(previewBox);
