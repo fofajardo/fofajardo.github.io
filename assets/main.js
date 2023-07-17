@@ -83,10 +83,6 @@ function parseMarkdown(aText) {
     return parsedValue;
 }
 
-function getPreviewUrl(aFileName) {
-    return `assets/images/previews/${aFileName}`;
-}
-
 var gSite = {
     buildProjects: async function () {
         await System.import("https://cdnjs.cloudflare.com/ajax/libs/marked/5.1.1/marked.min.js")
@@ -101,7 +97,7 @@ var gSite = {
                 let previewBox = createBox("card-preview");
                 let previewPlaceholder = createBox("card-preview-placeholder phs");
                 let previewImage = create("img", "img-uiv", "", `${entry.title} preview image`);
-                previewImage.src = getPreviewUrl(entry.preview);
+                previewImage.src = `assets/images/previews/${entry.preview}`;
                 previewImage.classList.add("loading");
                 previewImage.addEventListener("load", async function () {
                     previewImage.addEventListener("click", function () {
@@ -221,7 +217,7 @@ var gSite = {
                 viewerTarget = create("ul", "previewset");
                 for (let img of aEntry.previewset) {
                     let galleryImage = create("img");
-                    galleryImage.src = getPreviewUrl(img);
+                    galleryImage.src = `assets/images/previewset/${img}`;
                     let galleryImageListItem = create("li");
                     galleryImageListItem.appendChild(galleryImage);
                     viewerTarget.appendChild(galleryImageListItem);
