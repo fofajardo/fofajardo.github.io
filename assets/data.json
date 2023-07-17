@@ -89,7 +89,7 @@
                 "Wrote a text-based interactive fiction computer game with a team, similar to the popular computer games of the late 70s like [Zork](https://en.wikipedia.org/wiki/Zork).",
                 "Developed Statesman, a text adventure game system with a fully-featured scripting system, which means that the commands, interactions, text, and related resources are not hardcoded into the game and are instead read externally from the file system and parsed on runtime."
             ],
-            "extraInfo": "[Statesman](https://github.com/Lupalop/Statesman), programmed by yours truly, is **open source**. Likewise, the Statesman Script Language is documented [here](https://github.com/Lupalop/Statesman/blob/master/docs/script.md).",
+            "extraInfo": "[Statesman](https://github.com/Lupalop/Statesman) is open source and was recently [ported to C#](https://github.com/Lupalop/Statesman/tree/port-csharp). Its scripting language [documentation](https://github.com/Lupalop/Statesman/blob/master/docs/script.md) is also available.",
             "preview": "4.png",
             "previewset": ["4f.png", "4a.png", "4b.png", "4c.png", "4d.png", "4e.png"]
         },
