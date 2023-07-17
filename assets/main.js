@@ -60,13 +60,16 @@ function $(aId) {
     return document.getElementById(aId);
 }
 
-function create(aTagName, aClass = "", aId = "") {
+function create(aTagName, aClass = "", aId = "", aAltText = "") {
     let element = document.createElement(aTagName);
     if (aClass != "") {
         element.className = aClass;
     }
     if (aId != "") {
         element.id = aId;
+    }
+    if (aAltText != "") {
+        element.alt = aAltText;
     }
     return element;
 }
@@ -100,7 +103,7 @@ var gSite = {
             if ("preview" in entry) {
                 let previewBox = createBox("card-preview");
                 let previewPlaceholder = createBox("card-preview-placeholder phs");
-                let previewImage = create("img", "img-uiv");
+                let previewImage = create("img", "img-uiv", "", `${entry.title} preview image`);
                 previewImage.src = getPreviewUrl(entry.preview);
                 previewImage.classList.add("loading");
                 previewImage.addEventListener("load", function () {
