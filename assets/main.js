@@ -78,12 +78,8 @@ function createBox(aClass = "", aId = "") {
     return create("div", aClass, aId);
 }
 
-async function parseMarkdown(aText) {
-    let parsedValue = "";
-    await System.import("./assets/libs/marked/marked.min.js")
-        .then(function () {
-            parsedValue = marked.parse(aText);
-        });
+function parseMarkdown(aText) {
+    let parsedValue = marked.parse(aText, { headerIds: false, mangle: false });
     return parsedValue;
 }
 
@@ -93,6 +89,7 @@ function getPreviewUrl(aFileName) {
 
 var gSite = {
     buildProjects: async function () {
+        await System.import("https://cdnjs.cloudflare.com/ajax/libs/marked/5.1.1/marked.min.js")
         let data = await gAPI.getData();
         let projects = data.projects;
         let technologies = data.technologies;
@@ -106,42 +103,10 @@ var gSite = {
                 let previewImage = create("img", "img-uiv", "", `${entry.title} preview image`);
                 previewImage.src = getPreviewUrl(entry.preview);
                 previewImage.classList.add("loading");
-                previewImage.addEventListener("load", function () {
-                    if ("previewset" in entry && entry.previewset) {
-                        // Images will be loaded only on demand.
-                        previewImage.addEventListener("click", function () {
-                            if (!previewImage.viewer) {
-                                let viewerTarget = create("ul", "previewset");
-                                for (let img of entry.previewset) {
-                                    let galleryImageListItem = create("li");
-                                    let galleryImage = create("img");
-                                    galleryImage.src = getPreviewUrl(img);
-                                    galleryImageListItem.appendChild(galleryImage);
-                                    viewerTarget.appendChild(galleryImageListItem);
-                                }
-                                previewImage.viewer = new Viewer(
-                                    viewerTarget,
-                                    {
-                                        inline: false,
-                                        title: false,
-                                    }
-                                );
-                            }
-                            // Since Viewer.js will handle clicks for the hidden
-                            // viewer target instead of the preview image, we have
-                            // to do this manually instead.
-                            previewImage.viewer.show();
-                        });
-                    } else {
-                        let viewerTarget = previewImage;
-                        let viewer = new Viewer(
-                            viewerTarget,
-                            {
-                                inline: false,
-                                title: false,
-                            }
-                        );
-                    }
+                previewImage.addEventListener("load", async function () {
+                    previewImage.addEventListener("click", function () {
+                        gSite.onViewImage(previewImage, entry);
+                    });
                     previewImage.classList.remove("loading");
                     previewPlaceholder.classList.remove("phs");
                 });
@@ -238,6 +203,42 @@ var gSite = {
 
             projectSet.appendChild(card);
         }
+    },
+
+    viewerLoaded: false,
+    onViewImage: async function (aImage, aEntry) {
+        if (!aImage.viewer) {
+            if (!gSite.viewerLoaded) {
+                let baseUrl = "https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.11.3/viewer.min";
+                await System.import(`${baseUrl}.js`);
+                document.getElementsByTagName('head')[0].insertAdjacentHTML(
+                    "beforeend",
+                    `<link rel="stylesheet" href="${baseUrl}.css" />`);
+                gSite.viewerLoaded = true;
+            }
+            let viewerTarget = aImage;
+            if ("previewset" in aEntry && aEntry.previewset) {
+                viewerTarget = create("ul", "previewset");
+                for (let img of aEntry.previewset) {
+                    let galleryImage = create("img");
+                    galleryImage.src = getPreviewUrl(img);
+                    let galleryImageListItem = create("li");
+                    galleryImageListItem.appendChild(galleryImage);
+                    viewerTarget.appendChild(galleryImageListItem);
+                }
+            }
+            aImage.viewer = new Viewer(
+                viewerTarget,
+                {
+                    inline: false,
+                    title: false,
+                }
+            );
+        }
+        // Since Viewer.js will handle clicks for the hidden
+        // viewer target instead of the preview image, we have
+        // to do this manually instead.
+        aImage.viewer.show();
     },
 
     onLoad: async function () {
