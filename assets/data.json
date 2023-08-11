@@ -1,5 +1,6 @@
 {
     "technologies": {
+        "javafx": "Java/JavaFX",
         "javaee": "Java/Jakarta EE",
         "java": "Java",
         "php": "PHP",
@@ -12,6 +13,21 @@
         "mgxna": "MonoGame/XNA"
     },
     "projects": [
+        {
+            "id": "deadwoodjustice",
+            "title": "Deadwood Justice",
+            "subtitle": "A mini ship shooting game with a western theme.",
+            "url": "https://github.com/Lupalop/DeadwoodJustice",
+            "dateStart": "May 2023",
+            "dateEnd": "June 2023",
+            "technologies": ["javafx"],
+            "points": [
+                "Designed and developed a mini ship shooting game with a Western theme, featuring various difficulty modes and power-ups.",
+                "Implemented gameplay mechanics, such as high-score functionality, and reused 2D graphics from freely-available sources."
+            ],
+            "preview": "9",
+            "previewset": ["9a.png", "9b.png", "9c.png", "9d.png", "9e.png", "9f.png"]
+        },
         {
             "id": "dikta",
             "title": "Dikta",
