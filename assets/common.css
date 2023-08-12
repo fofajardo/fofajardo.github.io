@@ -5,10 +5,23 @@
   --color-secondary: #f8fbff;
   --color-accent: #0b57cf;
   --page-background: #e1f1ff;
+  --page-background-alternate: #bdd7ff;
   --page-header-color: #06214a;
   --page-text-color: #000;
   --page-font: "Overpass", "Red Hat Display", "Helvetica", "Segoe UI", "Roboto", sans-serif;
   --max-distance: 62.5rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-primary: #fff;
+    --color-secondary: #181818;
+    --color-accent: #fff;
+    --page-background: #000;
+    --page-background-alternate: #181818;
+    --page-header-color: #fff;
+    --page-text-color: #cccccc;    
+  }
 }
 
 html {
@@ -136,7 +149,11 @@ span.subtitle {
 }
 
 .bg.cl2 {
-  background: linear-gradient(270deg, #e1f1ff, #bdd7ff, #bdd7ff, #e1f1ff);
+  background: linear-gradient(270deg,
+    var(--page-background),
+    var(--page-background-alternate),
+    var(--page-background-alternate),
+    var(--page-background));
   background-size: 800% 800%;
   background-attachment: fixed;
   border-radius: 24px;
@@ -304,7 +321,7 @@ th {
   border-radius: 24px;
   background: var(--color-secondary);
   box-shadow: 0 5px 15px 1px rgba(0, 0, 0, 0.03);
-  color: #000;
+  color: var(--page-text-color);
   gap: 1em;
 }
 
