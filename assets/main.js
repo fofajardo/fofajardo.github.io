@@ -114,6 +114,7 @@ var gSite = {
             }
             foundEntry = true;
 
+            document.title += ` - ${entry.title}`
 
             let sectionTitle = $("details-title");
             sectionTitle.innerText = entry.title;
