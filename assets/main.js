@@ -84,17 +84,34 @@ function parseMarkdown(aText) {
 }
 
 var gSite = {
-    buildProjects: async function () {
+    _redirectToIndex: function () {
+        window.location.replace(
+            window.location.href.substring(
+                0, window.location.href.lastIndexOf("/"))
+                .replace("projects", ""));
+    },
+    
+    buildDetails: async function (aSlug) {
+        // Redirect user to home page if we don't know what project to show.
+        if (!aSlug) {
+            gSite._redirectToIndex();
+            return;
+        }
+        
         await System.import("https://cdnjs.cloudflare.com/ajax/libs/marked/5.1.1/marked.min.js")
+        
         let data = await gAPI.getData();
         let projects = data.projects;
         let technologies = data.technologies;
-
-        let projectSet = $("cardset-projects");
+        let foundEntry = false;
+        
         for (let entry of projects) {
-            let cardAnchor = create("a", "card-anchor");
-            cardAnchor.target = "_blank";
-            cardAnchor.href = entry.url;
+            if (entry.id != aSlug) {
+                continue;
+            }
+            foundEntry = true;
+
+            var content = $("cardset-details");
             
             let card = createBox("card", `project-${entry.id}`);
             if ("preview" in entry) {
@@ -123,11 +140,11 @@ var gSite = {
                 previewImage.src = `${baseSourceUrl}.jpg`;
                 previewImage.classList.add("loading");
                 previewImage.addEventListener("load", async function () {
-                    /*
+                    
                     previewImage.addEventListener("click", function () {
                         gSite.onViewImage(previewImage, entry);
                     });
-                    */
+                   
                     previewImage.classList.remove("loading");
                     previewPlaceholder.classList.remove("phs");
                 });
@@ -147,7 +164,7 @@ var gSite = {
                 iconBox.appendChild(icon);
                 
                 previewBox.appendChild(previewPlaceholder);
-                // previewBox.appendChild(iconBox);
+                previewBox.appendChild(iconBox);
                 card.appendChild(previewBox);
             }
 
@@ -170,8 +187,8 @@ var gSite = {
             detailBox.appendChild(detailTech);
 
             let detailTechLabel = create("span", "fw-bold");
-            detailTechLabel.innerText = "Tech: ";
-            // detailTech.appendChild(detailTechLabel);
+            detailTechLabel.innerText = "Technologies: ";
+            detailTech.appendChild(detailTechLabel);
             let detailTechList = create("span");
             for (let i = 0; i < entry.technologies.length; i++) {
                 techName = entry.technologies[i];
@@ -184,7 +201,106 @@ var gSite = {
                     detailTechList.innerText += ", ";
                 }
             }
-            // detailTech.appendChild(detailTechList);
+            detailTech.appendChild(detailTechList);
+
+            let detailDuration = create("span");
+            if (entry.dateStart) {
+                detailDuration.innerText += entry.dateStart;
+            }
+            if ("dateEnd" in entry) {
+                if (entry.dateEnd) {
+                    detailDuration.innerText += ` – ${entry.dateEnd}`;
+                }
+            } else {
+                detailDuration.innerText += ` – Present`;
+            }
+            detailTitle.appendChild(detailDuration);
+            
+            var detailPoints = create("ul");
+            for (let point of entry.points) {
+                pointListItem = create("li");
+                pointListItem.innerHTML = await parseMarkdown(point);
+                detailPoints.appendChild(pointListItem);
+            }
+            detailBox.appendChild(detailPoints);
+
+            if ("extraInfo" in entry) {
+                detailBox.innerHTML += await parseMarkdown(entry.extraInfo);
+            }
+
+            content.appendChild(card);
+        }
+        
+        if (!foundEntry) {
+            gSite._redirectToIndex();
+        }
+    },
+    
+    buildProjects: async function () {
+        let data = await gAPI.getData();
+        let projects = data.projects;
+        let technologies = data.technologies;
+
+        let projectSet = $("cardset-projects");
+        for (let entry of projects) {
+            let cardAnchor = create("a", "card-anchor");
+            cardAnchor.href = window.location.href.substring(
+                0, window.location.href.lastIndexOf("/") + 1)
+                + "projects?id=" + entry.id;
+            
+            let card = createBox("card", `project-${entry.id}`);
+            if ("preview" in entry) {
+                let previewBox = createBox("card-preview");
+                let previewPlaceholder = createBox("card-preview-placeholder phs");
+
+                // Preview picture: image and its alternate sources.
+                let previewPicture = create("picture");
+                previewPlaceholder.appendChild(previewPicture);
+
+                let baseSourceUrl = `assets/images/previews/${entry.preview}`;
+
+                let previewWebpSource = create("source");
+                previewWebpSource.type = "image/webp";
+                previewWebpSource.srcset = `${baseSourceUrl}.webp`;
+                previewPicture.appendChild(previewWebpSource);
+
+                let previewJpegSource = create("source");
+                previewJpegSource.type = "image/jpeg";
+                previewJpegSource.srcset = `${baseSourceUrl}.jpg`;
+                previewPicture.appendChild(previewJpegSource);
+
+                let previewImage = create("img", "img-uiv", "", `${entry.title} preview image`);
+                previewImage.width = "200";
+                previewImage.height = "200";
+                previewImage.src = `${baseSourceUrl}.jpg`;
+                previewImage.classList.add("loading");
+                previewImage.addEventListener("load", async function () {
+                    previewImage.classList.remove("loading");
+                    previewPlaceholder.classList.remove("phs");
+                });
+                previewImage.addEventListener("error", function () {
+                    previewImage.hidden = true;
+                    previewPlaceholder.classList.add("missing");
+                });
+                previewPicture.appendChild(previewImage);
+                previewBox.appendChild(previewPlaceholder);
+                card.appendChild(previewBox);
+            }
+
+            let detailBox = createBox("card-detail");
+            card.appendChild(detailBox);
+
+            let detailTitle = createBox("card-header");
+            detailBox.appendChild(detailTitle);
+
+            let detailTitleText = create("span");
+            detailTitleText.innerText = entry.title;
+            detailTitleText.classList.add("header-link");
+            detailTitle.appendChild(detailTitleText);
+
+            let detailSubtitle = createBox("card-subtitle");
+            detailSubtitle.innerText = entry.subtitle;
+            detailBox.appendChild(detailSubtitle);
 
             let detailDuration = create("span");
             if (entry.dateStart) {
@@ -198,20 +314,7 @@ var gSite = {
                 detailDuration.innerText += ` – Present`;
             }
             detailBox.appendChild(detailDuration);
-            
-            /*
-            var detailPoints = create("ul");
-            for (let point of entry.points) {
-                pointListItem = create("li");
-                pointListItem.innerHTML = await parseMarkdown(point);
-                detailPoints.appendChild(pointListItem);
-            }
-            detailBox.appendChild(detailPoints);
 
-            if ("extraInfo" in entry) {
-                detailBox.innerHTML += await parseMarkdown(entry.extraInfo);
-            }
-            */
             cardAnchor.appendChild(card);
             projectSet.appendChild(cardAnchor);
         }
@@ -254,7 +357,15 @@ var gSite = {
     },
 
     onLoad: async function () {
-        await gSite.buildProjects();
+        var urlParameters = new URLSearchParams(window.location.search);
+        var detailSlug = urlParameters.get("id");
+        var detailBox = $("details");
+
+        if (detailBox) {
+            await gSite.buildDetails(detailSlug);
+        } else {
+            await gSite.buildProjects();
+        }
         gSite.doneLoading();
     },
 
