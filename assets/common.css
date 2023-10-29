@@ -384,19 +384,13 @@ th {
 }
 
 .card > .card-preview img {
-  cursor: pointer;
-  transition: opacity 1s, filter 250ms ease-in;
+  transition: opacity 1s ease-in;
   opacity: 1;
   object-position: center center;
   object-fit: cover;
 }
 
-.card > .card-preview img:not(.loading):hover {
-  filter: brightness(0.8);
-}
-
 .card > .card-preview img.loading {
-  cursor: auto;
   opacity: 0;
 }
 
@@ -451,15 +445,6 @@ th {
   font-weight: bold;
   text-decoration: none;
   align-items: center;
-}
-
-.header-link > .link-icon {
-  margin-left: 0.25em;
-}
-
-a.header-link:hover {
-  color: var(--color-accent);
-  text-decoration: underline;
 }
 
 /* ::::: throbber ::::: */

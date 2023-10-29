@@ -119,9 +119,11 @@ var gSite = {
                 previewImage.src = `${baseSourceUrl}.jpg`;
                 previewImage.classList.add("loading");
                 previewImage.addEventListener("load", async function () {
+                    /*
                     previewImage.addEventListener("click", function () {
                         gSite.onViewImage(previewImage, entry);
                     });
+                    */
                     previewImage.classList.remove("loading");
                     previewPlaceholder.classList.remove("phs");
                 });
@@ -153,20 +155,8 @@ var gSite = {
 
             let detailTitleText = create("span");
             detailTitleText.innerText = entry.title;
-
-            if ("url" in entry && entry.url) {
-                let detailTitleLink = create("a", "header-link");
-                detailTitleLink.target = "_blank";
-                detailTitleLink.href = entry.url;
-                let linkIcon = create("span", "link-icon iconify");
-                linkIcon.dataset.icon = "mdi:open-in-new";
-                detailTitleLink.appendChild(detailTitleText);
-                detailTitleLink.appendChild(linkIcon);
-                detailTitle.appendChild(detailTitleLink);
-            } else {
-                detailTitleText.classList.add("header-link");
-                detailTitle.appendChild(detailTitleText);
-            }
+            detailTitleText.classList.add("header-link");
+            detailTitle.appendChild(detailTitleText);
 
             let detailDuration = create("span");
             if (entry.dateStart) {
