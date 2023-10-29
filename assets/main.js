@@ -141,7 +141,7 @@ var gSite = {
                 iconBox.appendChild(icon);
                 
                 previewBox.appendChild(previewPlaceholder);
-                previewBox.appendChild(iconBox);
+                // previewBox.appendChild(iconBox);
                 card.appendChild(previewBox);
             }
 
@@ -205,6 +205,7 @@ var gSite = {
             }
             detailTech.appendChild(detailTechList);
 
+            /*
             var detailPoints = create("ul");
             for (let point of entry.points) {
                 pointListItem = create("li");
@@ -216,7 +217,7 @@ var gSite = {
             if ("extraInfo" in entry) {
                 detailBox.innerHTML += await parseMarkdown(entry.extraInfo);
             }
-
+            */
             projectSet.appendChild(card);
         }
     },
