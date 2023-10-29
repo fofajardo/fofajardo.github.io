@@ -113,7 +113,7 @@
             "id": "yakan",
             "title": "Yakan",
             "url": "",
-            "subtitle": "Blog/CMS",
+            "subtitle": "Blog/Content Management System (CMS)",
             "dateStart": "June 2021",
             "dateEnd": "",
             "technologies": ["php", "webstack"],
