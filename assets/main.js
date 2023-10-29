@@ -84,11 +84,14 @@ function parseMarkdown(aText) {
 }
 
 var gSite = {
-    _redirectToIndex: function () {
-        window.location.replace(
-            window.location.href.substring(
-                0, window.location.href.lastIndexOf("/"))
-                .replace("projects", ""));
+    _redirectToIndex: function (aFragment) {
+        let target = window.location.href.substring(
+            0, window.location.href.lastIndexOf("/"))
+            .replace("projects", "");
+        if (aFragment) {
+            target += `#${aFragment}`;
+        }
+        window.location.replace(target);
     },
     
     buildDetails: async function (aSlug) {
@@ -197,6 +200,17 @@ var gSite = {
 
             let content = $("cardset-details");
             content.appendChild(card);
+            
+            $("action-back").addEventListener("click", function () {
+                gSite._redirectToIndex(`project-${entry.id}`);
+            });
+            
+            let actionVisit = $("action-visit-url");
+            if ("url" in entry && entry.url) {
+                actionVisit.target = "_blank";
+                actionVisit.href = entry.url;
+                actionVisit.hidden = false;
+            }
         }
         
         if (!foundEntry) {
