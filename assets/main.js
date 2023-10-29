@@ -133,16 +133,17 @@ var gSite = {
 
             let card = createBox("card", `project-${entry.id}`);
             if ("previewset" in entry && entry.previewset) {
-                let viewerTarget = $("glide-slides");
-                for (let img of entry.previewset) {
-                    let galleryImage = create("img", "glide__slide");
-                    galleryImage.src = `assets/images/previewset/${img}`;
-                    let galleryImageListItem = create("li");
-                    galleryImageListItem.appendChild(galleryImage);
-                    viewerTarget.appendChild(galleryImageListItem);
-                    galleryImage.addEventListener("click", function () {
-                        gSite.onViewImage(galleryImage, entry);
+                let slidesTarget = $("glide-slides");
+                for (let i = 0; i < entry.previewset.length; i++) {
+                    let img = entry.previewset[i];
+                    let slideImage = create("img", "glide__slide");
+                    slideImage.src = `assets/images/previewset/${img}`;
+                    slideImage.addEventListener("click", function () {
+                        gSite.onViewImage(slideImage, entry, i);
                     });
+                    let slideItem = create("li");
+                    slideItem.appendChild(slideImage);
+                    slidesTarget.appendChild(slideItem);
                 }
 
                 let baseUrl = "https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.6.0/";
@@ -303,7 +304,7 @@ var gSite = {
     },
 
     viewerLoaded: false,
-    onViewImage: async function (aImage, aEntry) {
+    onViewImage: async function (aImage, aEntry, aIndex) {
         if (!aImage.viewer) {
             if (!gSite.viewerLoaded) {
                 let baseUrl = "https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.11.3/viewer.min";
@@ -335,7 +336,7 @@ var gSite = {
         // Since Viewer.js will handle clicks for the hidden
         // viewer target instead of the preview image, we have
         // to do this manually instead.
-        aImage.viewer.show();
+        aImage.viewer.view(aIndex);
     },
 
     onLoad: async function () {
