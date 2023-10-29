@@ -92,6 +92,10 @@ var gSite = {
 
         let projectSet = $("cardset-projects");
         for (let entry of projects) {
+            let cardAnchor = create("a", "card-anchor");
+            cardAnchor.target = "_blank";
+            cardAnchor.href = entry.url;
+            
             let card = createBox("card", `project-${entry.id}`);
             if ("preview" in entry) {
                 let previewBox = createBox("card-preview");
@@ -158,19 +162,6 @@ var gSite = {
             detailTitleText.classList.add("header-link");
             detailTitle.appendChild(detailTitleText);
 
-            let detailDuration = create("span");
-            if (entry.dateStart) {
-                detailDuration.innerText += entry.dateStart;
-            }
-            if ("dateEnd" in entry) {
-                if (entry.dateEnd) {
-                    detailDuration.innerText += ` – ${entry.dateEnd}`;
-                }
-            } else {
-                detailDuration.innerText += ` – Present`;
-            }
-            detailTitle.appendChild(detailDuration);
-            
             let detailSubtitle = createBox("card-subtitle");
             detailSubtitle.innerText = entry.subtitle;
             detailBox.appendChild(detailSubtitle);
@@ -179,8 +170,8 @@ var gSite = {
             detailBox.appendChild(detailTech);
 
             let detailTechLabel = create("span", "fw-bold");
-            detailTechLabel.innerText = "Technologies: ";
-            detailTech.appendChild(detailTechLabel);
+            detailTechLabel.innerText = "Tech: ";
+            // detailTech.appendChild(detailTechLabel);
             let detailTechList = create("span");
             for (let i = 0; i < entry.technologies.length; i++) {
                 techName = entry.technologies[i];
@@ -193,8 +184,21 @@ var gSite = {
                     detailTechList.innerText += ", ";
                 }
             }
-            detailTech.appendChild(detailTechList);
+            // detailTech.appendChild(detailTechList);
 
+            let detailDuration = create("span");
+            if (entry.dateStart) {
+                detailDuration.innerText += entry.dateStart;
+            }
+            if ("dateEnd" in entry) {
+                if (entry.dateEnd) {
+                    detailDuration.innerText += ` – ${entry.dateEnd}`;
+                }
+            } else {
+                detailDuration.innerText += ` – Present`;
+            }
+            detailBox.appendChild(detailDuration);
+            
             /*
             var detailPoints = create("ul");
             for (let point of entry.points) {
@@ -208,7 +212,8 @@ var gSite = {
                 detailBox.innerHTML += await parseMarkdown(entry.extraInfo);
             }
             */
-            projectSet.appendChild(card);
+            cardAnchor.appendChild(card);
+            projectSet.appendChild(cardAnchor);
         }
     },
 

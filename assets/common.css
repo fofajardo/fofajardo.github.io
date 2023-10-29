@@ -1,10 +1,12 @@
 /* ::::: primary ::::: */
 
 :root {
-  --color-primary: #000;
-  --color-secondary: #f8fbff;
+  --color-primary: #000000;
+  --color-secondary: #e1f1ff;
   --color-accent: #0b57cf;
-  --page-background: #e1f1ff;
+  --card-background-normal: #f8fafd;
+  --card-background-hover: var(--color-secondary);
+  --page-background: #f4f9ff;
   --page-background-alternate: #bdd7ff;
   --page-header-color: #06214a;
   --page-text-color: #000;
@@ -14,12 +16,13 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-primary: #fff;
+    --color-primary: #ffffff;
     --color-secondary: #181818;
-    --color-accent: #fff;
-    --page-background: #000;
+    --color-accent: #ffffff;
+    --card-background-normal: #28292A;
+    --page-background: #000000;
     --page-background-alternate: #181818;
-    --page-header-color: #fff;
+    --page-header-color: #ffffff;
     --page-text-color: #cccccc;    
   }
 }
@@ -70,6 +73,7 @@ h1, h2, h3, h4 {
 
 h1 {
   font-weight: 900;
+  font-size: 2.5em;
 }
 
 span.title {
@@ -316,8 +320,8 @@ th {
 
 .cardset.grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1em;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5em;
 }
 
 .cardset.grid .card {
@@ -325,18 +329,57 @@ th {
   flex-direction: column;
 }
 
+.card-anchor {
+  display: block;
+  font-weight: inherit;
+  background: var(--card-background-normal);
+  transition: background 150ms, box-shadow 150ms, border-radius 200ms;
+  border: 2px solid transparent;
+  border-radius: 24px;
+}
+
+.card-anchor:focus,
+.card-anchor:hover {
+  background: var(--card-background-hover);
+  box-shadow: 0 5px 15px 1px rgba(0, 0, 0, 0.03);
+  text-decoration: inherit;
+}
+
+.card-anchor:hover:active,
+.card-anchor:focus {
+  border-radius: 48px;
+}
+
+.card-anchor > .card > .card-preview img,
+.card-anchor .card-preview-placeholder {
+  transition: border-radius 150ms;
+}
+
+.card-anchor:hover:active > .card > .card-preview img,
+.card-anchor:focus > .card > .card-preview img,
+.card-anchor:hover:active .card-preview-placeholder,
+.card-anchor:focus .card-preview-placeholder {
+  border-top-left-radius: 48px;
+  border-top-right-radius: 48px;
+}
+
+.card-anchor:focus {
+  outline: 0;
+}
+
+.card-anchor:focus:is(:hover, :not(:hover:active)) {
+  border-color: var(--color-primary);
+}
+
 .card {
   display: flex;
   margin: 1em 0;
   border-radius: 24px;
-  background: var(--color-secondary);
-  box-shadow: 0 5px 15px 1px rgba(0, 0, 0, 0.03);
   color: var(--page-text-color);
 }
 
 /* FIXME: Preserve old card style for non-grid card parent */
 :is(#section-contact, #section-about) .card {
-  padding: 1em;
   gap: 1em;
 }
 
@@ -345,6 +388,10 @@ th {
   .card > .card-preview {
     margin-right: 1em;
   }
+}
+
+.card > .card-detail > .card-subtitle {
+  font-weight: bold;
 }
 
 .card > .card-detail {
