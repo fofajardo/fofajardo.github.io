@@ -99,7 +99,7 @@ var gSite = {
         }
         
         await System.import("https://cdnjs.cloudflare.com/ajax/libs/marked/5.1.1/marked.min.js")
-        
+
         let data = await gAPI.getData();
         let projects = data.projects;
         let technologies = data.technologies;
@@ -111,77 +111,58 @@ var gSite = {
             }
             foundEntry = true;
 
-            var content = $("cardset-details");
-            
+
+            let sectionTitle = $("details-title");
+            sectionTitle.innerText = entry.title;
+            let detailSubtitle = $("details-subtitle");
+            detailSubtitle.innerText = entry.subtitle;
+            let detailDuration = $("details-duration");
+            if (entry.dateStart) {
+                detailDuration.innerText += entry.dateStart;
+            }
+            if ("dateEnd" in entry) {
+                if (entry.dateEnd) {
+                    detailDuration.innerText += ` – ${entry.dateEnd}`;
+                }
+            } else {
+                detailDuration.innerText += ` – Present`;
+            }
+
             let card = createBox("card", `project-${entry.id}`);
-            if ("preview" in entry) {
-                let previewBox = createBox("card-preview");
-                let previewPlaceholder = createBox("card-preview-placeholder phs");
-
-                // Preview picture: image and its alternate sources.
-                let previewPicture = create("picture");
-                previewPlaceholder.appendChild(previewPicture);
-
-                let baseSourceUrl = `assets/images/previews/${entry.preview}`;
-
-                let previewWebpSource = create("source");
-                previewWebpSource.type = "image/webp";
-                previewWebpSource.srcset = `${baseSourceUrl}.webp`;
-                previewPicture.appendChild(previewWebpSource);
-
-                let previewJpegSource = create("source");
-                previewJpegSource.type = "image/jpeg";
-                previewJpegSource.srcset = `${baseSourceUrl}.jpg`;
-                previewPicture.appendChild(previewJpegSource);
-
-                let previewImage = create("img", "img-uiv", "", `${entry.title} preview image`);
-                previewImage.width = "200";
-                previewImage.height = "200";
-                previewImage.src = `${baseSourceUrl}.jpg`;
-                previewImage.classList.add("loading");
-                previewImage.addEventListener("load", async function () {
-                    
-                    previewImage.addEventListener("click", function () {
-                        gSite.onViewImage(previewImage, entry);
+            if ("previewset" in entry && entry.previewset) {
+                let viewerTarget = $("glide-slides");
+                for (let img of entry.previewset) {
+                    let galleryImage = create("img", "glide__slide");
+                    galleryImage.src = `assets/images/previewset/${img}`;
+                    let galleryImageListItem = create("li");
+                    galleryImageListItem.appendChild(galleryImage);
+                    viewerTarget.appendChild(galleryImageListItem);
+                    galleryImage.addEventListener("click", function () {
+                        gSite.onViewImage(galleryImage, entry);
                     });
-                   
-                    previewImage.classList.remove("loading");
-                    previewPlaceholder.classList.remove("phs");
-                });
-                previewImage.addEventListener("error", function () {
-                    previewImage.hidden = true;
-                    previewPlaceholder.classList.add("missing");
-                });
-                previewPicture.appendChild(previewImage);
+                }
 
-                // View the entire preview set button.
-                let iconBox = createBox("preview-icon-box");
-                iconBox.addEventListener("click", function () {
-                    previewImage.click();
-                });
-                let icon = create("span", "preview-icon iconify");
-                icon.dataset.icon = "mdi:image-multiple-outline";
-                iconBox.appendChild(icon);
-                
-                previewBox.appendChild(previewPlaceholder);
-                previewBox.appendChild(iconBox);
-                card.appendChild(previewBox);
+                let baseUrl = "https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.6.0/";
+                await System.import(`${baseUrl}glide.min.js`);
+                document.getElementsByTagName('head')[0].insertAdjacentHTML(
+                    "beforeend",
+                    `<link rel="stylesheet" href="${baseUrl}css/glide.core.min.css" />`);
+                    
+                new Glide('.glide', {
+                    type: "carousel",
+                    autoplay: 3000,
+                    hoverpause: false,
+                    perView: 3,
+                    breakpoints: {
+                        767: {
+                            perView: 1
+                        }
+                    }
+                }).mount()
             }
 
             let detailBox = createBox("card-detail");
             card.appendChild(detailBox);
-
-            let detailTitle = createBox("card-header");
-            detailBox.appendChild(detailTitle);
-
-            let detailTitleText = create("span");
-            detailTitleText.innerText = entry.title;
-            detailTitleText.classList.add("header-link");
-            detailTitle.appendChild(detailTitleText);
-
-            let detailSubtitle = createBox("card-subtitle");
-            detailSubtitle.innerText = entry.subtitle;
-            detailBox.appendChild(detailSubtitle);
 
             let detailTech = createBox("card-tech");
             detailBox.appendChild(detailTech);
@@ -202,19 +183,6 @@ var gSite = {
                 }
             }
             detailTech.appendChild(detailTechList);
-
-            let detailDuration = create("span");
-            if (entry.dateStart) {
-                detailDuration.innerText += entry.dateStart;
-            }
-            if ("dateEnd" in entry) {
-                if (entry.dateEnd) {
-                    detailDuration.innerText += ` – ${entry.dateEnd}`;
-                }
-            } else {
-                detailDuration.innerText += ` – Present`;
-            }
-            detailTitle.appendChild(detailDuration);
             
             var detailPoints = create("ul");
             for (let point of entry.points) {
@@ -223,11 +191,11 @@ var gSite = {
                 detailPoints.appendChild(pointListItem);
             }
             detailBox.appendChild(detailPoints);
-
             if ("extraInfo" in entry) {
                 detailBox.innerHTML += await parseMarkdown(entry.extraInfo);
             }
 
+            let content = $("cardset-details");
             content.appendChild(card);
         }
         
@@ -298,7 +266,7 @@ var gSite = {
             detailTitleText.classList.add("header-link");
             detailTitle.appendChild(detailTitleText);
 
-            let detailSubtitle = createBox("card-subtitle");
+            let detailSubtitle = create("div", "card-subtitle fw-bold");
             detailSubtitle.innerText = entry.subtitle;
             detailBox.appendChild(detailSubtitle);
 

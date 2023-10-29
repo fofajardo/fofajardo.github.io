@@ -393,23 +393,19 @@ th {
   }
 }
 
-.card > .card-detail > .card-subtitle {
-  font-weight: bold;
-}
-
 .card > .card-detail {
   margin: 1em;
   width: calc(100% - (1em * 2));
 }
 
-.card > .card-detail > .card-header {
+.box-sb {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 }
 
 @media screen and (max-width: 425px) {
-  .card > .card-detail > .card-header {
+  .box-sb {
     flex-direction: column;
   }
 }
@@ -488,6 +484,93 @@ th {
   font-weight: bold;
   text-decoration: none;
   align-items: center;
+}
+
+/* ::::: content: project details ::::: */
+
+#details-subhead {
+  font-size: 1.25em;
+  margin-bottom: 1em;
+}
+
+/* ::::: glide ::::: */
+
+.glide .glide__arrow {
+  opacity: 0;
+}
+
+.glide:hover .glide__arrow {
+  opacity: 1;
+}
+
+.glide__arrow {
+  position: absolute;
+  display: block;
+  top: 50%;
+  z-index: 2;
+  color: var(--page-text-color);
+  text-transform: uppercase;
+  padding: 10px 12px;
+  font-size: 2em;
+  background-color: var(--card-background-normal);
+  border: none;
+  border-radius: 99999em;
+  box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.1);
+  text-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: opacity 150ms ease, border 300ms ease-in-out;
+  transform: translateY(-50%);
+  line-height: 1;
+}
+
+.glide__arrow:focus {
+  outline: none;
+}
+
+.glide__arrow--left {
+  left: 0.5em;
+}
+
+.glide__arrow--right {
+  right: 0.5em;
+}
+
+.glide__arrow--disabled {
+  opacity: 0;
+}
+
+.glide--swipeable {
+  cursor: grab;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
+}
+
+.glide--dragging {
+  cursor: grabbing;
+  cursor: -moz-grabbing;
+  cursor: -webkit-grabbing;
+}
+
+body:not([data-loaded]) .glide__slide {
+  visibility: hidden;
+}
+
+.glide__slide {
+  width: 0px;
+  max-height: 300px;
+  border-radius: 1em;
+  object-position: center center;
+  object-fit: cover;
+}
+
+.glide__slides > li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.glide__slides {
+  list-style: none;
 }
 
 /* ::::: throbber ::::: */
