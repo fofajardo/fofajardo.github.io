@@ -1,4 +1,5 @@
 const URL_DATA = "assets/data.json";
+const URL_CDN = "https://cdnjs.cloudflare.com/ajax/libs/";
 
 var gAPI = {
     request: async function (aUrl, aHeaders = new Headers()) {
@@ -101,8 +102,7 @@ var gSite = {
             return;
         }
         
-        await System.import(
-            "https://cdnjs.cloudflare.com/ajax/libs/marked/5.1.1/marked.min.js");
+        await System.import(`${URL_CDN}marked/5.1.1/marked.min.js`);
 
         let data = await gAPI.getData();
         let projects = data.projects;
@@ -146,7 +146,7 @@ var gSite = {
                 slidesTarget.appendChild(slideItem);
             }
 
-            let baseUrl = "https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.6.0/";
+            let baseUrl = `${URL_CDN}Glide.js/3.6.0/`;
             await System.import(`${baseUrl}glide.min.js`);
             document.getElementsByTagName('head')[0].insertAdjacentHTML(
                 "beforeend",
@@ -307,7 +307,7 @@ var gSite = {
     onViewImage: async function (aImage, aEntry, aIndex) {
         if (!aImage.viewer) {
             if (!gSite.viewerLoaded) {
-                let baseUrl = "https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.11.3/viewer.min";
+                let baseUrl = `${URL_CDN}viewerjs/1.11.3/viewer.min`;
                 await System.import(`${baseUrl}.js`);
                 document.getElementsByTagName('head')[0].insertAdjacentHTML(
                     "beforeend",
