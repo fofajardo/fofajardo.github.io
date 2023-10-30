@@ -48,6 +48,7 @@
             "subtitle": "JS-based Add-ons Site for XUL Applications",
             "url": "https://projectfresco.github.io/",
             "dateStart": "March 2022",
+            "dateEnd": "",
             "technologies": ["webstack"],
             "points": [],
             "preview": "11",
