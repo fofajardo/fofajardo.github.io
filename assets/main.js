@@ -1,6 +1,9 @@
 const URL_DATA = "assets/data.json";
 const URL_CDN = "https://cdnjs.cloudflare.com/ajax/libs/";
 
+const TYPE_ACADEMIC = 0;
+const TYPE_PERSONAL = 1;
+
 var gAPI = {
     request: async function (aUrl, aHeaders = new Headers()) {
         let cacheKey = btoa(aUrl);
@@ -219,12 +222,12 @@ var gSite = {
         }
     },
     
-    buildProjects: async function () {
+    buildProjects: async function (aType, aSet) {
         let data = await gAPI.getData();
-        let projects = data.projects;
+        let projects = data.projects.filter((e) => e.type == aType);
         let technologies = data.technologies;
 
-        let projectSet = $("cardset-projects");
+        let projectSet = $(aSet);
         for (let entry of projects) {
             let cardAnchor = create("a", "card-anchor");
             cardAnchor.href = window.location.href.substring(
@@ -347,7 +350,8 @@ var gSite = {
         if (detailBox) {
             await gSite.buildDetails(detailSlug);
         } else {
-            await gSite.buildProjects();
+            await gSite.buildProjects(TYPE_ACADEMIC, "cardset-projects");
+            await gSite.buildProjects(TYPE_PERSONAL, "cardset-personalprojects");
         }
         gSite.doneLoading();
     },

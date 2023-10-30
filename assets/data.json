@@ -15,6 +15,7 @@
     },
     "projects": [
         {
+            "type": 0,
             "id": "deadwoodjustice",
             "title": "Deadwood Justice",
             "subtitle": "Western-themed Shooting Game",
@@ -30,6 +31,7 @@
             "previewset": ["9a.png", "9b.png", "9c.png", "9d.png", "9e.png", "9f.png"]
         },
         {
+            "type": 0,
             "id": "sts-doms",
             "title": "Dormitory Online Monitoring System",
             "subtitle": "Mobile App for Streamlining UPLB Dormitory Transactions",
@@ -47,6 +49,7 @@
             "extraInfo": "### Overview\nOur proposed solution involves the development of an electronic logging system aimed at reducing paper and pen usage, leading to environmental benefits, improving the efficiency of the logging process, and providing UPLB students with a more convenient and streamlined system.\n\nThe envisioned electronic logging system relies on the application of scientific and technological principles, especially in the fields of computer science and software engineering. With this expertise, we intend to create a user-friendly and highly efficient logging system."
         },
         {
+            "type": 0,
             "id": "dikta",
             "title": "Dikta",
             "subtitle": "Investigative Point and Click Adventure Game",
@@ -64,6 +67,7 @@
             "previewset": ["8a.png", "8b.png", "8c.png", "8d.png", "8e.png", "8f.png", "8g.png", "8h.png", "8i.png", "8j.png", "8k.png", "8l.png", "8m.png"]
         },
         {
+            "type": 0,
             "id": "agrikulturam",
             "title": "AgrikultuRAM",
             "subtitle": "Interactive Front-end for Banana Plantation Pest Management",
@@ -80,6 +84,7 @@
             "previewset": ["7a.png", "7b.png", "7c.png", "7d.png", "7e.png"]
         },
         {
+            "type": 0,
             "id": "elections",
             "title": "Halal (aka Project Elections)",
             "url": "https://github.com/fofajardo/project-elections",
@@ -96,6 +101,7 @@
             "previewset": ["6a.png", "6b.png", "6c.png", "6d.png", "6e.png", "6f.png", "6g.png", "6h.png", "6i.png", "6j.png", "6k.png", "6l.png", "6m.png", "6n.png", "6o.png", "6p.png", "6q.png", "6r.png", "6s.png"]
         },
         {
+            "type": 0,
             "id": "kodatos",
             "title": "KoDatos",
             "url": "https://github.com/fofajardo/kodatos",
@@ -112,6 +118,7 @@
             "previewset": ["5a.png", "5b.png", "5c.png", "5d.png", "5e.png", "5f.png", "5g.png", "5h.png", "5i.png", "5j.png", "5k.png", "5l.png", "5m.png", "5n.png"]
         },
         {
+            "type": 0,
             "id": "pacificliberty",
             "title": "Pacific Liberty",
             "url": "https://github.com/Lupalop/PacificLiberty",
@@ -128,6 +135,7 @@
             "previewset": ["4f.png", "4a.png", "4b.png", "4c.png", "4d.png", "4e.png"]
         },
         {
+            "type": 0,
             "id": "yakan",
             "title": "Yakan",
             "url": "",
@@ -143,6 +151,7 @@
             "previewset": ["3a.jpg", "3b.png", "3c.png", "3d.png", "3e.png", "3f.png", "3g.png"]
         },
         {
+            "type": 0,
             "id": "fortschritt",
             "title": "Fortschritt",
             "url": "https://github.com/fofajardo/fortschritt",
@@ -157,6 +166,7 @@
             "previewset": ["2a.jpg", "2b.jpg", "2c.jpg"]
         },
         {
+            "type": 0,
             "id": "getsaved",
             "title": "Get Saved",
             "url": "https://github.com/Lupalop/GetSaved",
