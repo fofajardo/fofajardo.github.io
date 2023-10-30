@@ -230,9 +230,14 @@ var gSite = {
         let projectSet = $(aSet);
         for (let entry of projects) {
             let cardAnchor = create("a", "card-anchor");
-            cardAnchor.href = window.location.href.substring(
-                0, window.location.href.lastIndexOf("/") + 1)
-                + "projects?id=" + entry.id;
+            if ("isDirect" in entry && entry.isDirect) {
+                cardAnchor.target = "_blank";
+                cardAnchor.href = entry.url;
+            } else {
+                cardAnchor.href = window.location.href.substring(
+                    0, window.location.href.lastIndexOf("/") + 1)
+                    + "projects?id=" + entry.id;
+            }
             
             let card = createBox("card", `project-${entry.id}`);
             if ("preview" in entry) {
