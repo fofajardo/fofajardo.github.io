@@ -56,6 +56,17 @@
             "content": "**Project Fresco** was initially developed as a temporary measure back when the Pale Moon add-ons site went down. It has the following set of features, as of writing:\n * **Full add-on name/description/keywords/author search.** Just type [Lootyhoof](https://projectfresco.github.io/addons/?q=lootyhoof) and all of his extensions will show-up in the results. Partial matches also work!\n * **User pages.** There is now a dedicated page that show every add-on associated with a specific user. Here's an [example](https://projectfresco.github.io/addons/?user=franklindm).\n * **Random add-ons listing in the home page.** Since writing a recommendation algorithm introduces some bias and privacy implications that I'd rather not deal with, the Fresco project [home page](https://projectfresco.github.io/addons/) now shows random applications, extensions, themes, and dictionaries that might be of interest. It does change with every refresh.\n * **Pagination.** Add-on categories don't show everything at once and the listing is now separated by numbered pages.\n * **Release notes.**\n * **Site themes.** Right now, there are 3 site themes to choose from: Default (modern AMO style), Cavendish (classic Mozilla style), and Blue (APMO style).\n * **Dedicated discussion section.** Shown on each add-on page. Hosted via GitHub discussions and supports \"reactions\".\n\n**Some technical details:** Fresco uses the GitHub API for nearly every add-on entry, which is why it does not require manual changes if a specific add-on releases a new update. Since it sits on top of GitHub Pages, it cannot use PHP or any other tech that would produce static pages with data from the GitHub API, unless we'd (a) go with the manual route, that is, to manually update each and every page with every add-on update; or (b) host it in a separate, independently-hosted site. This isn't practical and is something that I'm not willing to do for a site that acts as a mirror, which is why I've went with a JS approach in accessing the GitHub API and in building the add-on pages and lists."
         },
         {
+            "type": 1,
+            "id": "uxp-add-ons",
+            "title": "Add-ons for UXP Applications",
+            "subtitle": "Extensions and Themes for Various Purposes",
+            "url": "https://projectfresco.github.io/addons/?user=franklindm",
+            "isDirect": true,
+            "dateStart": "December 2016",
+            "points": [],
+            "preview": "14"
+        },
+        {
             "type": 0,
             "id": "deadwoodjustice",
             "title": "Deadwood Justice",
