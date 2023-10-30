@@ -19,7 +19,7 @@
             "type": 1,
             "id": "nuvelocity",
             "title": "NuVelocity",
-            "subtitle": "Re-implementation of Reflexive's Velocity Engine. ",
+            "subtitle": "Re-implementation of Reflexive's Velocity Engine",
             "url": "https://github.com/frankwilco/NuVelocity",
             "dateStart": "July 2023",
             "dateEnd": "",
