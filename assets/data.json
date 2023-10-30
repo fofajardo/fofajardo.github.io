@@ -223,8 +223,8 @@
             "title": "Get Saved",
             "url": "https://github.com/Lupalop/GetSaved",
             "subtitle": "Prototype Video Game",
-            "dateStart": "September 2018, March 2019",
-            "dateEnd": "April 2019",
+            "dateStart": "September 2018",
+            "dateEnd": "",
             "technologies": ["csharp", "mgxna"],
             "points": [
                 "Wrote a simple game engine on top of MonoGame that handles most of the general functions from game logic to the user interface used in a video game.",
