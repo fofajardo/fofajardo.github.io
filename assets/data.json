@@ -11,7 +11,8 @@
         "pygame": "Pygame",
         "csharp": "C#",
         "mgxna": "MonoGame/XNA",
-        "figma": "Figma"
+        "figma": "Figma",
+        "unity": "Unity"
     },
     "projects": [
         {
@@ -26,6 +27,19 @@
             "points": [],
             "preview": "12",
             "content": "### Overview\nNuVelocity is a project focused on creating an open-source re-implementation of Reflexive Entertainment's Velocity Engine, known for its role in games like Ricochet. The project has successfully decrypted and re-exported graphics assets from later Reflexive Entertainment games, such as [Ricochet Infinity](https://wiki.ricochetuniverse.com/wiki/Ricochet_Infinity) and [Ricochet HD](https://wiki.ricochetuniverse.com/wiki/Ricochet_HD). The aim is to revive these classic games for modern gamers while fostering a collaborative community of developers and enthusiasts.\n\nThe [NuVelocity Unpacker](https://github.com/frankwilco/NuVelocity.Unpacker/releases/latest) is already released to the public, as well as a list of currently supported games."
+        },
+        {
+            "type": 1,
+            "id": "rimworld-custommodsfolders",
+            "title": "Custom Mods Folders for RimWorld",
+            "subtitle": "Alternative Mod Loader",
+            "url": "https://github.com/frankwilco/CustomModsFolders",
+            "dateStart": "January 2023",
+            "dateEnd": "",
+            "technologies": ["csharp", "unity"],
+            "points": [],
+            "preview": "13",
+            "content": "### Overview\nThis mod allows loading mods from directories outside the traditional Mods directory where the game resides.\n\nParticularly useful if you want to:\n * Organize mods and separate them by author, category, or whichever way you like.\n * Separate mods made by other people from mods made by yourself, especially if you're a mod developer.\n * Quickly add and remove a set of mods that you'd want to test."
         },
         {
             "type": 1,
