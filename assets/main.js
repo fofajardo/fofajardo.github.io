@@ -203,8 +203,8 @@ var gSite = {
             detailBox.appendChild(detailPoints);
         }
 
-        if ("extraInfo" in entry) {
-            detailBox.innerHTML += await parseMarkdown(entry.extraInfo);
+        if ("content" in entry) {
+            detailBox.innerHTML += await parseMarkdown(entry.content);
         }
 
         let content = $("cardset-details");

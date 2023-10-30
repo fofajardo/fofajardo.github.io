@@ -25,7 +25,7 @@
             "points": [],
             "preview": "11",
             "previewset": ["11a.png", "11b.png", "11c.png", "11d.png", "11e.png", "11f.png", "11g.png"],
-            "extraInfo": "**Project Fresco** was initially developed as a temporary measure back when the Pale Moon add-ons site went down. It has the following set of features, as of writing:\n * **Full add-on name/description/keywords/author search.** Just type [Lootyhoof](https://projectfresco.github.io/addons/?q=lootyhoof) and all of his extensions will show-up in the results. Partial matches also work!\n * **User pages.** There is now a dedicated page that show every add-on associated with a specific user. Here's an [example](https://projectfresco.github.io/addons/?user=franklindm).\n * **Random add-ons listing in the home page.** Since writing a recommendation algorithm introduces some bias and privacy implications that I'd rather not deal with, the Fresco project [home page](https://projectfresco.github.io/addons/) now shows random applications, extensions, themes, and dictionaries that might be of interest. It does change with every refresh.\n * **Pagination.** Add-on categories don't show everything at once and the listing is now separated by numbered pages.\n * **Release notes.**\n * **Site themes.** Right now, there are 3 site themes to choose from: Default (modern AMO style), Cavendish (classic Mozilla style), and Blue (APMO style).\n * **Dedicated discussion section.** Shown on each add-on page. Hosted via GitHub discussions and supports \"reactions\".\n\n**Some technical details:** Fresco uses the GitHub API for nearly every add-on entry, which is why it does not require manual changes if a specific add-on releases a new update. Since it sits on top of GitHub Pages, it cannot use PHP or any other tech that would produce static pages with data from the GitHub API, unless we'd (a) go with the manual route, that is, to manually update each and every page with every add-on update; or (b) host it in a separate, independently-hosted site. This isn't practical and is something that I'm not willing to do for a site that acts as a mirror, which is why I've went with a JS approach in accessing the GitHub API and in building the add-on pages and lists."
+            "content": "**Project Fresco** was initially developed as a temporary measure back when the Pale Moon add-ons site went down. It has the following set of features, as of writing:\n * **Full add-on name/description/keywords/author search.** Just type [Lootyhoof](https://projectfresco.github.io/addons/?q=lootyhoof) and all of his extensions will show-up in the results. Partial matches also work!\n * **User pages.** There is now a dedicated page that show every add-on associated with a specific user. Here's an [example](https://projectfresco.github.io/addons/?user=franklindm).\n * **Random add-ons listing in the home page.** Since writing a recommendation algorithm introduces some bias and privacy implications that I'd rather not deal with, the Fresco project [home page](https://projectfresco.github.io/addons/) now shows random applications, extensions, themes, and dictionaries that might be of interest. It does change with every refresh.\n * **Pagination.** Add-on categories don't show everything at once and the listing is now separated by numbered pages.\n * **Release notes.**\n * **Site themes.** Right now, there are 3 site themes to choose from: Default (modern AMO style), Cavendish (classic Mozilla style), and Blue (APMO style).\n * **Dedicated discussion section.** Shown on each add-on page. Hosted via GitHub discussions and supports \"reactions\".\n\n**Some technical details:** Fresco uses the GitHub API for nearly every add-on entry, which is why it does not require manual changes if a specific add-on releases a new update. Since it sits on top of GitHub Pages, it cannot use PHP or any other tech that would produce static pages with data from the GitHub API, unless we'd (a) go with the manual route, that is, to manually update each and every page with every add-on update; or (b) host it in a separate, independently-hosted site. This isn't practical and is something that I'm not willing to do for a site that acts as a mirror, which is why I've went with a JS approach in accessing the GitHub API and in building the add-on pages and lists."
         },
         {
             "type": 0,
@@ -59,7 +59,7 @@
             ],
             "preview": "10",
             "previewset": ["10a.png", "10b.png", "10c.png", "10d.png", "10e.png", "10f.png", "10g.png", "10h.png", "10i.png", "10j.png"],
-            "extraInfo": "### Overview\nOur proposed solution involves the development of an electronic logging system aimed at reducing paper and pen usage, leading to environmental benefits, improving the efficiency of the logging process, and providing UPLB students with a more convenient and streamlined system.\n\nThe envisioned electronic logging system relies on the application of scientific and technological principles, especially in the fields of computer science and software engineering. With this expertise, we intend to create a user-friendly and highly efficient logging system."
+            "content": "### Overview\nOur proposed solution involves the development of an electronic logging system aimed at reducing paper and pen usage, leading to environmental benefits, improving the efficiency of the logging process, and providing UPLB students with a more convenient and streamlined system.\n\nThe envisioned electronic logging system relies on the application of scientific and technological principles, especially in the fields of computer science and software engineering. With this expertise, we intend to create a user-friendly and highly efficient logging system."
         },
         {
             "type": 0,
@@ -126,7 +126,7 @@
                 "Developed a system for handling test results and vaccination records, primarily focused on COVID-19, that allowed people to verify the authenticity of these documents.",
                 "Integrated many useful features, such as the ability to scan QR codes from vaccination records and test results."
             ],
-            "_extraInfo": "You may use this [QR code](assets/kodatos_qr.png) or the following reference code to test the platform: `C4FC9ABF22B55E23`.",
+            "_content": "You may use this [QR code](assets/kodatos_qr.png) or the following reference code to test the platform: `C4FC9ABF22B55E23`.",
             "preview": "5",
             "previewset": ["5a.png", "5b.png", "5c.png", "5d.png", "5e.png", "5f.png", "5g.png", "5h.png", "5i.png", "5j.png", "5k.png", "5l.png", "5m.png", "5n.png"]
         },
@@ -143,7 +143,7 @@
                 "Wrote a text-based interactive fiction computer game with a team, similar to the popular computer games of the late 70s like [Zork](https://en.wikipedia.org/wiki/Zork).",
                 "Developed Statesman, a text adventure game system with a fully-featured scripting system, which means that the commands, interactions, text, and related resources are not hardcoded into the game and are instead read externally from the file system and parsed on runtime."
             ],
-            "extraInfo": "[Statesman](https://github.com/Lupalop/Statesman) is open source and was recently [ported to C#](https://github.com/Lupalop/Statesman/tree/port-csharp). Its scripting language [documentation](https://github.com/Lupalop/Statesman/blob/master/docs/script.md) is also available.",
+            "content": "[Statesman](https://github.com/Lupalop/Statesman) is open source and was recently [ported to C#](https://github.com/Lupalop/Statesman/tree/port-csharp). Its scripting language [documentation](https://github.com/Lupalop/Statesman/blob/master/docs/script.md) is also available.",
             "preview": "4",
             "previewset": ["4f.png", "4a.png", "4b.png", "4c.png", "4d.png", "4e.png"]
         },
@@ -191,7 +191,7 @@
                 "Wrote a simple game engine on top of MonoGame that handles most of the general functions from game logic to the user interface used in a video game.",
                 "Programmed a prototype video game that aims to raise disaster preparedness and awareness among children."
             ],
-            "extraInfo": "[Maquina](https://github.com/Lupalop/Maquina) is the game engine which was developed as part of this project.",
+            "content": "[Maquina](https://github.com/Lupalop/Maquina) is the game engine which was developed as part of this project.",
             "preview": "1",
             "previewset": ["1a.png", "1b.png", "1c.png", "1d.png", "1e.png", "1f.png", "1g.png", "1h.png", "1i.png", "1j.png", "1k.png"]
         }
