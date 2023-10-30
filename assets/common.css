@@ -404,7 +404,7 @@ th {
   }
 }
 
-.card > .card-detail {
+.cardset.grid .card > .card-detail {
   margin: 1em;
   width: calc(100% - (1em * 2));
 }
