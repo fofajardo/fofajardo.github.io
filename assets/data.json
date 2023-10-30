@@ -16,6 +16,19 @@
     "projects": [
         {
             "type": 1,
+            "id": "nuvelocity",
+            "title": "NuVelocity",
+            "subtitle": "Re-implementation of Reflexive's Velocity Engine. ",
+            "url": "https://github.com/frankwilco/NuVelocity",
+            "dateStart": "July 2023",
+            "dateEnd": "",
+            "technologies": ["csharp"],
+            "points": [],
+            "preview": "12",
+            "content": "### Overview\nNuVelocity is a project focused on creating an open-source re-implementation of Reflexive Entertainment's Velocity Engine, known for its role in games like Ricochet. The project has successfully decrypted and re-exported graphics assets from later Reflexive Entertainment games, such as [Ricochet Infinity](https://wiki.ricochetuniverse.com/wiki/Ricochet_Infinity) and [Ricochet HD](https://wiki.ricochetuniverse.com/wiki/Ricochet_HD). The aim is to revive these classic games for modern gamers while fostering a collaborative community of developers and enthusiasts.\n\nThe [NuVelocity Unpacker](https://github.com/frankwilco/NuVelocity.Unpacker/releases/latest) is already released to the public, as well as a list of currently supported games."
+        },
+        {
+            "type": 1,
             "id": "projectfresco",
             "title": "Project Fresco",
             "subtitle": "JS-based Add-ons Site for XUL Applications",
