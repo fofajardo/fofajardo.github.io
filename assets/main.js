@@ -166,6 +166,9 @@ var gSite = {
                     }
                 }
             }).mount()
+        } else {
+            let glideParent = $("details-glide");
+            glideParent.remove();
         }
 
         let detailBox = createBox("card-detail");
