@@ -5,6 +5,8 @@
         "java": "Java",
         "php": "PHP",
         "webstack": "HTML, CSS, JS",
+        "nextjs": "React/Next.js",
+        "nodejs": "Node.js",
         "mysql": "MySQL",
         "pwa": "Progressive Web App (PWA)",
         "python": "Python",
@@ -15,6 +17,23 @@
         "unity": "Unity"
     },
     "projects": [
+        {
+            "type": 0,
+            "id": "numinous-solver",
+            "title": "Numinous Solver",
+            "subtitle": "Quadratic Spline Interpolation, Polynomial Regression, and Simplex Minimization (Diet Problem) solver",
+            "url": "https://numinous.pages.dev/",
+            "dateStart": "December 2023",
+            "dateEnd": "",
+            "technologies": ["webstack", "nodejs", "nextjs"],
+            "points": [
+                "Developed a Node.js package for solving various numerical analysis-related problems, using code originally written in R.",
+                "Implemented and designed a React/Next.js-based front-end for solving problems involving Quadratic Spline Interpolation (QSI), Polynomial Regression, and Simplex Minimization (diet problem).",
+                "Utilized available frameworks, particularly [MUI Core](https://mui.com/), for the site's components and overall aesthetic, and existing libraries such as [MathJax](https://www.mathjax.org/) and [Function Plot](https://mauriciopoppe.github.io/function-plot/) (which uses d3.js) for writing and graphing equations."
+            ],
+            "preview": "15",
+            "previewset": ["15c.png", "15d.png", "15e.png", "15f.png", "15g.png", "15h.png", "15i.png", "15j.png", "15k.png", "15l.png", "15a.png", "15b.png"]
+        },
         {
             "type": 1,
             "id": "nuvelocity",
