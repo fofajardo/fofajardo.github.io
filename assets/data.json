@@ -14,9 +14,32 @@
         "csharp": "C#",
         "mgxna": "MonoGame/XNA",
         "figma": "Figma",
-        "unity": "Unity"
+        "unity": "Unity",
+        "cpp": "C++"
     },
     "projects": [
+        {
+            "type": 1,
+            "id": "rtl8851bu",
+            "title": "rtl8851bu",
+            "subtitle": "Modified and updated version of Realtek RTL8851BU Wi-Fi USB Driver for Linux",
+            "url": "https://github.com/fofajardo/rtl8851bu",
+            "isDirect": true,
+            "dateStart": "November 2024",
+            "points": [],
+            "preview": "16"
+        },
+        {
+            "type": 1,
+            "id": "psgc-areas",
+            "title": "PSGC Areas",
+            "subtitle": "NPM package that provides a JS interface to access the Philippine Standard Geographic Code (PSGC) data",
+            "url": "https://github.com/fofajardo/psgc-areas",
+            "isDirect": true,
+            "dateStart": "May 2024",
+            "points": [],
+            "preview": "17"
+        },
         {
             "type": 0,
             "id": "numinous-solver",
