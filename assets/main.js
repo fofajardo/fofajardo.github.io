@@ -228,7 +228,6 @@ var gSite = {
     buildProjects: async function (aType, aSet) {
         let data = await gAPI.getData();
         let projects = data.projects.filter((e) => e.type == aType);
-        let technologies = data.technologies;
 
         let projectSet = $(aSet);
         for (let entry of projects) {
