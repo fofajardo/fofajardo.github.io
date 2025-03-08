@@ -97,14 +97,14 @@ var gSite = {
         }
         window.location.replace(target);
     },
-    
+
     buildDetails: async function (aSlug) {
         // Redirect user to home page if we don't know what project to show.
         if (!aSlug) {
             gSite._redirectToIndex();
             return;
         }
-        
+
         await System.import(`${URL_CDN}marked/5.1.1/marked.min.js`);
 
         let data = await gAPI.getData();
@@ -154,7 +154,7 @@ var gSite = {
             document.getElementsByTagName('head')[0].insertAdjacentHTML(
                 "beforeend",
                 `<link rel="stylesheet" href="${baseUrl}css/glide.core.min.css" />`);
-                
+
             new Glide('.glide', {
                 type: "carousel",
                 autoplay: 3000,
@@ -195,7 +195,7 @@ var gSite = {
             }
             detailTech.appendChild(detailTechList);
         }
-        
+
         if (entry.points) {
             var detailPoints = create("ul");
             for (let point of entry.points) {
@@ -212,11 +212,11 @@ var gSite = {
 
         let content = $("cardset-details");
         content.appendChild(card);
-        
+
         $("action-back").addEventListener("click", function () {
             gSite._redirectToIndex(`project-${entry.id}`);
         });
-        
+
         let actionVisit = $("action-visit-url");
         if ("url" in entry && entry.url) {
             actionVisit.target = "_blank";
@@ -224,7 +224,7 @@ var gSite = {
             actionVisit.hidden = false;
         }
     },
-    
+
     buildProjects: async function (aType, aSet) {
         let data = await gAPI.getData();
         let projects = data.projects.filter((e) => e.type == aType);
@@ -240,7 +240,7 @@ var gSite = {
                     0, window.location.href.lastIndexOf("/") + 1)
                     + "projects?id=" + entry.id;
             }
-            
+
             let card = createBox("card", `project-${entry.id}`);
             if ("preview" in entry) {
                 let previewBox = createBox("card-preview");
