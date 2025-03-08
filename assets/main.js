@@ -268,6 +268,7 @@ var gSite = {
                 previewImage.height = "200";
                 previewImage.src = `${baseSourceUrl}.jpg`;
                 previewImage.classList.add("loading");
+                previewImage.loading = "lazy";
                 previewImage.addEventListener("load", async function () {
                     previewImage.classList.remove("loading");
                     previewPlaceholder.classList.remove("phs");
