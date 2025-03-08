@@ -47,16 +47,17 @@ body {
   margin: 0;
 }
 
-a {
+a[href] {
   color: var(--color-accent);
   text-decoration: none;
   font-weight: 600;
 }
 
-a:focus,
-a:hover {
-  color: var(--color-primary);
-  text-decoration: underline;
+a[href]:not([class]):focus,
+a[href]:not([class]):hover {
+  color: var(--color-secondary);
+  background: var(--color-accent);
+  box-shadow: var(--color-accent) 0 0 0 2px;
 }
 
 .iconify.lha {
