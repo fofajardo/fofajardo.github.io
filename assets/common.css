@@ -7,6 +7,7 @@
   --card-background-normal: #f8fafd;
   --card-background-hover: var(--color-secondary);
   --page-background: #fdfdfd;
+  --page-background-alternate: #fafafa;
   --page-header-color: #000000;
   --page-text-color: #000;
   --page-font: "Overpass", "Red Hat Display", "Helvetica", "Segoe UI", "Roboto", sans-serif;
@@ -20,6 +21,7 @@
     --color-accent: #ffffff;
     --card-background-normal: #28292A;
     --page-background: #000000;
+    --page-background-alternate: #181818;
     --page-header-color: #ffffff;
     --page-text-color: #cccccc;
   }
@@ -130,6 +132,22 @@ span.subtitle {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+
+.bg.cl {
+  background-size: 800% 800%;
+  background-attachment: fixed;
+  border-radius: 24px;
+  margin: 10px;
+  animation: cl-gradient 30s ease infinite;
+}
+
+.bg.cl1 {
+  background: var(--page-background-alternate);
+}
+
+.bg.cl > .full {
+  height: calc(100vh - 40px);
 }
 
 .full {
