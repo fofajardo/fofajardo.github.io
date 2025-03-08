@@ -34,8 +34,8 @@ html {
 
 @keyframes slide {
   from {
-    opacity: 0;
-    transform: scale(0) translateY(-500px);
+    opacity: 0.001;
+    transform: scale(0.001) translateY(-500px);
   }
   to {
     opacity: 1;
