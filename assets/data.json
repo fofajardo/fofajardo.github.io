@@ -6,6 +6,7 @@
         "php": "PHP",
         "webstack": "HTML, CSS, JS",
         "nextjs": "React/Next.js",
+        "react": "React",
         "nodejs": "Node.js",
         "mongodb": "MongoDB",
         "mysql": "MySQL",
@@ -40,6 +41,24 @@
             "dateStart": "May 2024",
             "points": [],
             "preview": "17"
+        },
+        {
+            "type": 0,
+            "id": "food-review",
+            "title": "Food Review",
+            "subtitle": "A mini food and establishment review platform.",
+            "url": "https://github.com/fofajardo/cmsc127-food-review",
+            "dateStart": "May 2024",
+            "dateEnd": "June 2024",
+            "technologies": ["webstack", "nodejs", "mysql", "react"],
+            "points": [
+                "Implemented core backend logic using Express.js and Node.js, including secure user authentication with Passport.js.",
+                "Integrated frontend (Vite + React) with backend APIs to enable dynamic review submission, retrieval, and user session handling.",
+                "Drafted and iteratively refined the Enhanced Entity-Relationship Diagram (EERD) to align database schema with application requirements.",
+                "Wrote and optimized MySQL queries for CRUD operations across users, reviews, and establishments, ensuring relational consistency and performance."
+            ],
+            "preview": "19",
+            "previewset": ["19a.png", "19b.png", "19c.png", "19d.png", "19e.png", "19f.png", "19g.png", "19h.png"]
         },
         {
             "type": 0,
