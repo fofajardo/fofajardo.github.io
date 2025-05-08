@@ -7,6 +7,7 @@
         "webstack": "HTML, CSS, JS",
         "nextjs": "React/Next.js",
         "nodejs": "Node.js",
+        "mongodb": "MongoDB",
         "mysql": "MySQL",
         "pwa": "Progressive Web App (PWA)",
         "python": "Python",
@@ -39,6 +40,27 @@
             "dateStart": "May 2024",
             "points": [],
             "preview": "17"
+        },
+        {
+            "type": 0,
+            "id": "e-mbakan",
+            "title": "E-mbakan",
+            "subtitle": "A farm-to-table e-commerce website",
+            "url": "https://github.com/fofajardo/cmsc100-embakan-ecommerce",
+            "dateStart": "November 2023",
+            "dateEnd": "January 2024",
+            "technologies": ["webstack", "nodejs", "mongodb"],
+            "points": [
+                "Led a development team of 4 in building a full-stack e-commerce web application to connect farmers directly with consumers.",
+                "Managed the entire development cycle including planning, task distribution, UI/UX coordination, and system integration.",
+                "Developed the front end using React.js and Material UI, creating user-friendly interfaces for both customers and merchant users.",
+                "Built backend services using Node.js and Express.js to handle authentication, product management, order workflows, and reporting.",
+                "Designed and maintained a MongoDB database for storing dynamic user, product, and transaction data.",
+                "Implemented session management and handled browser-based cookie limitations for reliable login state retention."
+            ],
+            "preview": "18",
+            "previewset": ["18a.png", "18b.png", "18c.png", "18d.png", "18e.png", "18f.png", "18g.png", "18h.png", "18i.png", "18j.png", "18k.png", "18l.png", "18m.png", "18n.png", "18o.png", "18p.png", "18q.png", "18r.png", "18s.png", "18t.png", "18u.png", "18v.png", "18w.png", "18x.png", "18y.png", "18z.png", "18aa.png", "18ab.png", "18ac.png"],
+            "content": "**Video Demonstration (courtesy of R. F. Ramos):** [https://youtu.be/MntXkmDEjrE](https://youtu.be/MntXkmDEjrE)"
         },
         {
             "type": 0,
