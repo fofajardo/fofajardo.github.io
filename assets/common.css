@@ -37,6 +37,7 @@ html {
   background: var(--page-background);
   color: var(--page-text-color);
   scroll-behavior: smooth;
+  scrollbar-color: var(--color-primary) var(--page-background);
 }
 
 body {
