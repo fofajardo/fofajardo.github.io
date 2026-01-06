@@ -34,51 +34,59 @@
     </head>
     <body>
         <main>
-            <section class="bg cl cl1">
-                <div id="section-front-page" class="content-layout center full">
+            <section class="bg cl cl1 cl1o">
+                <div id="section-front-page" class="center">
                     <span class="title">Francis Dominic Fajardo</span>
                     <span class="subtitle">Software Developer</span>
-                    <div>
-                        <ul class="group-ab nav-main">
-                            <li>
-                                <a href="#about" class="action-button">
-                                    <span class="icon iconify" data-icon="mdi:account-details-outline"></span>
-                                    <span class="label">About</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#experience" class="action-button">
-                                    <span class="icon iconify" data-icon="mdi:briefcase-outline"></span>
-                                    <span class="label">Experience</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#projects" class="action-button">
-                                    <span class="icon iconify" data-icon="mdi:source-branch"></span>
-                                    <span class="label">Projects</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#contact" class="action-button">
-                                    <span class="icon iconify" data-icon="ic:twotone-question-answer"></span>
-                                    <span class="label">Contact</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+                </div>
+            </section>
+            <section id="contact">
+                <div class="center">
+                    <ul class="group-ab">
+                        <li>
+                            <a href="mailto:fajardo@duck.com" class="action-button">
+                                <span class="icon iconify" data-icon="mdi:email"></span>
+                                <span class="label visually-hidden">Email</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://facebook.com/fofajardo" class="action-button">
+                                <span class="icon iconify" data-icon="mdi:facebook"></span>
+                                <span class="label visually-hidden">Facebook</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a rel="me" href="https://fosstodon.org/@fajardo" class="action-button">
+                                <span class="icon iconify" data-icon="mdi:mastodon"></span>
+                                <span class="label visually-hidden">Mastodon</span>
+                            </a>
+                            <a rel="me" href="https://social.up.edu.ph/@fofajardo" style="display:none;">Mastodon</a>
+                        </li>
+                        <li>
+                            <a href="https://linkedin.com/in/fofajardo" class="action-button">
+                                <span class="icon iconify" data-icon="mdi:linkedin"></span>
+                                <span class="label visually-hidden">LinkedIn</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/fofajardo" class="action-button">
+                                <span class="icon iconify" data-icon="mdi:github"></span>
+                                <span class="label visually-hidden">GitHub</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://gitlab.com/fofajardo" class="action-button">
+                                <span class="icon iconify" data-icon="mdi:gitlab"></span>
+                                <span class="label visually-hidden">GitLab</span>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </section>
             <section class="bg" id="about">
                 <div id="section-about" class="content-layout">
-                    <h1>About Me</h1>
+                    <h1 class="visually-hidden">About Me</h1>
                     <div class="card">
-                        <div class="card-profile">
-                            <picture>
-                                <source type="image/webp" srcset="assets/images/profile/profile.webp">
-                                <source type="image/jpeg" srcset="assets/images/profile/profile.jpg">
-                                <img src="assets/images/profile/profile.jpg" width="100" height="100" alt="Francis Dominic Fajardo's profile picture"/>
-                            </picture>
-                        </div>
                         <div>
                             <p style="text-align: justify; margin: 0;">
                                 I'm <strong>Francis Dominic O. Fajardo</strong>, a BS Computer Science student at the <a target="_blank" href="https://uplb.edu.ph/">University of the Philippines Los Baños</a>. I've been fascinated with technology since I first used our old family computer as a kid. I am also a fan of Filipino writing and poetry, RPGs, strategy and simulation games, and retro gaming. I occasionally post about some of those topics in my blog, <a href="http://saligsig.wordpress.com/">Saligsig</a>.
@@ -89,6 +97,24 @@
                             </p>
                         </div>
                     </div>
+                </div>
+            </section>
+            <section id="navigation">
+                <div>
+                    <ul class="group-ab nav-main">
+                        <li>
+                            <a href="#experience" class="action-button">
+                                <span class="icon iconify" data-icon="mdi:briefcase-outline"></span>
+                                <span class="label">Experience</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#projects" class="action-button">
+                                <span class="icon iconify" data-icon="mdi:source-branch"></span>
+                                <span class="label">Projects</span>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </section>
             <section class="bg" id="experience">
@@ -225,54 +251,6 @@
                         </div>
                     </div>
                     <div id="cardset-projects" class="cardset grid">
-                    </div>
-                </div>
-            </section>
-            <section class="bg" id="contact">
-                <div id="section-contact" class="content-layout center full">
-                    <span class="title">
-                    Interested in Working Together?
-                    </span>
-                    <div class="card">
-                        <ul class="group-ab">
-                            <li>
-                                <a href="mailto:fajardo@duck.com" class="action-button">
-                                    <span class="icon iconify" data-icon="mdi:email"></span>
-                                    <span class="label">Email</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://facebook.com/fofajardo" class="action-button">
-                                    <span class="icon iconify" data-icon="mdi:facebook"></span>
-                                    <span class="label">Facebook</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a rel="me" href="https://fosstodon.org/@fajardo" class="action-button">
-                                    <span class="icon iconify" data-icon="mdi:mastodon"></span>
-                                    <span class="label">Mastodon</span>
-                                </a>
-                                <a rel="me" href="https://social.up.edu.ph/@fofajardo" style="display:none;">Mastodon</a>
-                            </li>
-                            <li>
-                                <a href="https://linkedin.com/in/fofajardo" class="action-button">
-                                    <span class="icon iconify" data-icon="mdi:linkedin"></span>
-                                    <span class="label">LinkedIn</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://github.com/fofajardo" class="action-button">
-                                    <span class="icon iconify" data-icon="mdi:github"></span>
-                                    <span class="label">GitHub</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://gitlab.com/fofajardo" class="action-button">
-                                    <span class="icon iconify" data-icon="mdi:gitlab"></span>
-                                    <span class="label">GitLab</span>
-                                </a>
-                            </li>
-                        </ul>
                     </div>
                 </div>
             </section>
