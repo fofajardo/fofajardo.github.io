@@ -2,31 +2,33 @@
 
 :root {
   --color-primary: #33FF33;
-  --color-accent: #3fa952ff;
+  --color-accent: #33FF33;
   --card-background-normal: #231f20;
   --card-background-hover: #33FF3338;
   --page-background: #000000;
   --page-background-alternate: #33FF33;
   --page-header-color: #33FF33;
   --page-text-color: #ffffffff;
-  --page-font: "Overpass", "Red Hat Display", "Helvetica", "Segoe UI", "Roboto", sans-serif;
+  --page-font: "Inter", "Helvetica", "Roboto", sans-serif;
+  --hero-background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='100%25' width='100%25'%3E%3Cdefs%3E%3Cpattern id='doodad' width='200' height='200' viewBox='0 0 40 40' patternUnits='userSpaceOnUse' patternTransform='rotate(135)'%3E%3Crect width='100%25' height='100%25' fill='rgba(51, 255, 51,1)'/%3E%3Cpath d='M0 20l21-20v2L0 22z' fill='rgba(0, 230, 0,1)'/%3E%3Cpath d='M21 0L40 20v2L21 2zM-19 0L0 20v2L-19 2z ' fill='rgba(51, 255, 51,1)'/%3E%3C/pattern%3E%3C/defs%3E%3Crect fill='url(%23doodad)' height='200%25' width='200%25'/%3E%3C/svg%3E ");
   --max-distance: 62.5rem;
 }
 
 @media (prefers-color-scheme: light) {
   :root {
     --color-primary: #000000ff;
-    --color-accent: #878787ff;
+    --color-accent: #000000ff;
     --card-background-normal: #f0f0f0;
     --card-background-hover: #86868638;
     --page-background: #ffffff;
     --page-background-alternate: #000000ff;
     --page-header-color: #000000ff;
     --page-text-color: #000000ff;
+    --hero-background: #ffffff;
   }
 
   .bg.cl1.cl1o {
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='100%25' width='100%25'%3E%3Cdefs%3E%3Cpattern id='doodad' width='200' height='200' viewBox='0 0 40 40' patternUnits='userSpaceOnUse' patternTransform='rotate(135)'%3E%3Crect width='100%25' height='100%25' fill='rgba(0, 122, 0,1)'/%3E%3Cpath d='M0 20l21-20v2L0 22z' fill='rgba(0, 153, 0,1)'/%3E%3Cpath d='M21 0L40 20v2L21 2zM-19 0L0 20v2L-19 2z ' fill='rgba(0, 122, 0,1)'/%3E%3C/pattern%3E%3C/defs%3E%3Crect fill='url(%23doodad)' height='200%25' width='200%25'/%3E%3C/svg%3E ");
+    color: var(--page-text-color);
   }
 }
 
@@ -35,17 +37,6 @@ html {
   background: var(--page-background);
   color: var(--page-text-color);
   scroll-behavior: smooth;
-}
-
-@keyframes slide {
-  from {
-    opacity: 0.001;
-    transform: scale(0.001) translateY(-500px);
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
 }
 
 body {
@@ -75,7 +66,7 @@ a[href]:not([class]):hover::after {
   width: 100%;
 }
 
-.iconify.lha {
+a[href] > .iconify {
   position: relative;
   bottom: -2px;
 }
@@ -97,10 +88,13 @@ h1 {
   font-size: 2.5em;
 }
 
+h2 {
+  border-left: 8px solid var(--page-header-color);
+  padding-left: 0.5em;
+}
+
 span.title {
-  font-family: "Fantasque Sans Mono";
-  font-style: italic;
-  font-size: 5em;
+  font-size: 4em;
   font-weight: 900;
 }
 
@@ -165,13 +159,19 @@ span.subtitle {
   flex-direction: column;
 }
 
+.center-v {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
 .bg.cl {
   margin: 1em;
   border-radius: 24px;
 }
 
 .bg.cl1 {
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='100%25' width='100%25'%3E%3Cdefs%3E%3Cpattern id='doodad' width='200' height='200' viewBox='0 0 40 40' patternUnits='userSpaceOnUse' patternTransform='rotate(135)'%3E%3Crect width='100%25' height='100%25' fill='rgba(51, 255, 51,1)'/%3E%3Cpath d='M0 20l21-20v2L0 22z' fill='rgba(0, 230, 0,1)'/%3E%3Cpath d='M21 0L40 20v2L21 2zM-19 0L0 20v2L-19 2z ' fill='rgba(51, 255, 51,1)'/%3E%3C/pattern%3E%3C/defs%3E%3Crect fill='url(%23doodad)' height='200%25' width='200%25'/%3E%3C/svg%3E ");
+  background: var(--hero-background);
   color: var(--page-background);
   padding: 1em;
 }
@@ -190,8 +190,9 @@ span.subtitle {
   display: flex;
   font-family: inherit;
   font-size: inherit;
-  border: 1px solid var(--color-accent);
-  background-color: var(--color-accent);
+  border: 2px solid var(--color-accent);
+  color: var(--color-accent);
+  background: none;
   text-decoration: none;
   padding: 0.5em 1em;
   border-radius: 9999em;
@@ -259,7 +260,7 @@ span.subtitle {
 
 .action-button > .label {
   margin-left: 5px;
-  font-weight: 1000;
+  font-weight: 700;
   color: var(--color-primary);
 }
 
@@ -286,24 +287,6 @@ span.subtitle {
 
 .group-ab > li:not(:last-child) {
   margin-right: 0.5em;
-}
-
-@media screen and (max-width: 620px) {
-  .group-ab.nav-main {
-    margin-left: 1em;
-    flex-direction: column;
-    justify-content: normal;
-  }
-  .group-ab.nav-main > li:not(:last-child) {
-    margin-bottom: 5px;
-    margin-right: 0;
-  }
-  .group-ab.nav-main .action-button {
-    flex-direction: row;
-  }
-  .group-ab.nav-main .action-button > .label {
-    margin-left: 0.5em;
-  }
 }
 
 /* ::::: table ::::: */
@@ -349,7 +332,6 @@ th {
 .card-anchor:focus,
 .card-anchor:hover {
   background: var(--card-background-hover);
-  box-shadow: 0 0 0 1px var(--color-primary) inset;
   transform: translateY(-8px);
   text-decoration: inherit;
 }
@@ -366,6 +348,17 @@ th {
   display: flex;
   margin: 1em 0;
   color: var(--page-text-color);
+}
+
+.card-icon {
+  width: 48px;
+  height: 48px;
+  font-size: 32px;
+  margin-right: 0.5em;
+  flex-shrink: 0;
+  display: flex;
+  align-items: start;
+  justify-content: center;
 }
 
 /* FIXME: Preserve old card style for non-grid card parent */
@@ -402,6 +395,7 @@ th {
 .card > .card-preview img {
   width: 200px;
   height: 200px;
+  border-radius: 24px;
 }
 
 .card-preview-placeholder,
@@ -425,24 +419,6 @@ th {
   opacity: 0;
 }
 
-.preview-icon-box {
-  cursor: pointer;
-  position: relative;
-  width: 16px;
-  height: 16px;
-  top: -5%;
-  left: calc(50% - 16px);
-  background: var(--color-accent);
-  padding: 8px;
-  border-radius: 9999em;
-  z-index: 2;
-  transition: filter 250ms;
-}
-
-.preview-icon-box:hover {
-  filter: brightness(1.2);
-}
-
 @media screen and (max-width: 767px) {
   .cardset.grid {
     display: grid;
@@ -452,10 +428,6 @@ th {
   #section-about .card {
     flex-direction: column;
     align-items: center;
-  }
-
-  .preview-icon-box {
-    display: none;
   }
 }
 
@@ -594,7 +566,18 @@ body[data-loaded="true"] .cardset-loader {
 
 /* ::::: responsive design ::::: */
 
-#section-front-page {
+@keyframes slide {
+  from {
+    opacity: 0.001;
+    transform: scale(0.001) translateY(-500px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.frame-slide {
   animation: 500ms slide ease;
 }
 

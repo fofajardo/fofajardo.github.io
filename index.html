@@ -30,12 +30,12 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/iconify/3.1.1/iconify.min.js" integrity="sha512-oQ1yQwSEIc9CTcK7pffEyS8fxom2iUWQrALk3j3+wfdSDjQ77EZbzGMGe2ZYmfoC8M9vR47apbS1ZYbW05y/pg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;700;900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     </head>
     <body>
-        <main>
+        <header class="full center-v frame-slide">
             <section class="bg cl cl1 cl1o">
-                <div id="section-front-page" class="center">
+                <div class="center">
                     <span class="title">Francis Dominic Fajardo</span>
                     <span class="subtitle">Software Developer</span>
                 </div>
@@ -44,39 +44,51 @@
                 <div class="center">
                     <ul class="group-ab">
                         <li>
+                            <a href="#experience" class="action-button">
+                                <span class="icon iconify" data-icon="tabler:briefcase"></span>
+                                <span class="label visually-hidden">Experience</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#projects" class="action-button">
+                                <span class="icon iconify" data-icon="tabler:git-merge"></span>
+                                <span class="label visually-hidden">Projects</span>
+                            </a>
+                        </li>
+                        <li>
                             <a href="mailto:fajardo@duck.com" class="action-button">
-                                <span class="icon iconify" data-icon="mdi:email"></span>
+                                <span class="icon iconify" data-icon="tabler:mail"></span>
                                 <span class="label visually-hidden">Email</span>
                             </a>
                         </li>
                         <li>
                             <a href="https://facebook.com/fofajardo" class="action-button">
-                                <span class="icon iconify" data-icon="mdi:facebook"></span>
+                                <span class="icon iconify" data-icon="tabler:brand-facebook"></span>
                                 <span class="label visually-hidden">Facebook</span>
                             </a>
                         </li>
                         <li>
                             <a rel="me" href="https://fosstodon.org/@fajardo" class="action-button">
-                                <span class="icon iconify" data-icon="mdi:mastodon"></span>
+                                <span class="icon iconify" data-icon="tabler:brand-mastodon"></span>
                                 <span class="label visually-hidden">Mastodon</span>
                             </a>
                             <a rel="me" href="https://social.up.edu.ph/@fofajardo" style="display:none;">Mastodon</a>
                         </li>
                         <li>
                             <a href="https://linkedin.com/in/fofajardo" class="action-button">
-                                <span class="icon iconify" data-icon="mdi:linkedin"></span>
+                                <span class="icon iconify" data-icon="tabler:brand-linkedin"></span>
                                 <span class="label visually-hidden">LinkedIn</span>
                             </a>
                         </li>
                         <li>
                             <a href="https://github.com/fofajardo" class="action-button">
-                                <span class="icon iconify" data-icon="mdi:github"></span>
+                                <span class="icon iconify" data-icon="tabler:brand-github"></span>
                                 <span class="label visually-hidden">GitHub</span>
                             </a>
                         </li>
                         <li>
                             <a href="https://gitlab.com/fofajardo" class="action-button">
-                                <span class="icon iconify" data-icon="mdi:gitlab"></span>
+                                <span class="icon iconify" data-icon="tabler:brand-gitlab"></span>
                                 <span class="label visually-hidden">GitLab</span>
                             </a>
                         </li>
@@ -89,42 +101,100 @@
                     <div class="card">
                         <div>
                             <p style="text-align: justify; margin: 0;">
-                                I'm <strong>Francis Dominic O. Fajardo</strong>, a BS Computer Science student at the <a target="_blank" href="https://uplb.edu.ph/">University of the Philippines Los Baños</a>. I've been fascinated with technology since I first used our old family computer as a kid. I am also a fan of Filipino writing and poetry, RPGs, strategy and simulation games, and retro gaming. I occasionally post about some of those topics in my blog, <a href="http://saligsig.wordpress.com/">Saligsig</a>.
+                                I'm a Computer Science student at the <a target="_blank" href="https://uplb.edu.ph/"><span class="iconify" data-icon="tabler:school"></span> University of the Philippines Los Baños</a>.<br/><br/> I've been fascinated with technology since I first used our old family computer as a kid. I am also a fan of Filipino writing and poetry, RPGs, strategy and simulation games, and retro gaming. I occasionally post about some of those topics in my blog, <a href="http://saligsig.wordpress.com/"><span class="iconify" data-icon="tabler:brand-wordpress"></span> Saligsig</a>.
                                 <br/><br/>
-                                My first serious encounter with programming was in high school. I was tasked to write and develop a <a href="#project-getsaved">video game prototype</a> from scratch, aimed at instilling disaster preparedness for young children. It was a difficult but fun experience that intrigued me enough to pursue this field.
-                                <br/><br/>
-                                I invite you to take a closer look at my <a target="_blank" href="https://drive.google.com/file/d/1FkoQdk_GV_Ad2Lb7VSxhBX6uddumziwo/view?usp=drive_link">résumé</a> to explore my qualifications and experiences.
+                                Take a closer look at my <a target="_blank" href="https://drive.google.com/file/d/1FkoQdk_GV_Ad2Lb7VSxhBX6uddumziwo/view?usp=drive_link"><span class="iconify" data-icon="tabler:file-type-pdf"></span> résumé</a> to explore my qualifications and experiences.
                             </p>
                         </div>
                     </div>
                 </div>
             </section>
-            <section id="navigation">
-                <div>
-                    <ul class="group-ab nav-main">
-                        <li>
-                            <a href="#experience" class="action-button">
-                                <span class="icon iconify" data-icon="mdi:briefcase-outline"></span>
-                                <span class="label">Experience</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#projects" class="action-button">
-                                <span class="icon iconify" data-icon="mdi:source-branch"></span>
-                                <span class="label">Projects</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </section>
+        </header>
+        <main>
             <section class="bg" id="experience">
                 <div id="section-experience" class="content-layout">
                     <h1>Experience</h1>
                     <div id="cardset-experience-extracurricular" class="cardset">
                         <div class="box-sb">
+                            <div class="card-icon">
+                                <span class="icon iconify" data-icon="tabler:arrow-badge-right"></span>
+                            </div>
                             <div class="card-detail" style="flex:1;">
                                 <div class="box-sb">
-                                    <span style="font-size: 1.25em; text-transform: uppercase; font-weight: bold; ">
+                                    <span style="font-size: 1.25em; font-weight: bold; max-width: 30em; ">
+                                        Unified XUL Platform Contributor/C++ Developer/Add-ons Team Member
+                                    </span>
+                                    <span>April 2022 – Present</span>
+                                </div>
+                                <span>
+                                    Pale Moon web browser (volunteer capacity)
+                                </span>
+                                <ul>
+                                    <li>Adapted and ported JS and CSS web features from Firefox, enhancing compatibility and functionality, which significantly improved cross-browser performance and user satisfaction.</li>
+                                    <li>Developed a custom implementation of a CSS selector from scratch, effectively resolving display issues encountered by end-users across multiple websites, leading to a more consistent user experience.</li>
+                                    <li>Conducted thorough research on legacy code to understand its complexities, ensuring seamless integration with new features and enhancing overall system performance and maintainability.</li>
+                                    <li>Reviewed submissions made by extension and theme developers to the Pale Moon Add-ons Site, ensuring adherence to quality standards and compatibility with the browser.</li>
+                                    <li>Addressed issues and reviewed pull requests related to the browser’s layout component, contributing to improved layout stability and a reduction in user-reported layout bugs.</li>
+                                </ul>
+                                <a target="_blank" href="https://repo.palemoon.org/MoonchildProductions/UXP/pulls?q=&type=all&sort=&state=&labels=&milestone=0&project=0&assignee=0&poster=16"><span class="iconify" data-icon="tabler:external-link"></span> View work</span></a>
+                                <br/><br/>
+                            </div>
+                        </div>
+                        <div class="box-sb">
+                            <div class="card-icon">
+                                <span class="icon iconify" data-icon="tabler:arrow-badge-right"></span>
+                            </div>
+                            <div class="card-detail" style="flex:1;">
+                                <div class="box-sb">
+                                    <div style="font-size: 1.25em; font-weight: bold; ">
+                                        Director for Marketing and Promotions
+                                    </div>
+                                    <span>November 2021 – August 2022</span>
+                                </div>
+                                <span>
+                                    Junior Philippine Computer Society - Asia Pacific College Chapter
+                                </span>
+                                <ul>
+                                    <li>Led the marketing and promotions team and made sure the publication materials are completed on time.</li>
+                                    <li>Designed posters and created audiovisual presentations for events and related organization activities.</li>
+                                    <li>Assisted and guided team members with questions that they may have about the publication materials.</li>
+                                    <li>Managed the social media pages of the organization on different platforms.</li>
+                                </ul>
+                                <a target="_blank" href="https://www.youtube.com/@fofajardo/search?query=AVP"><span class="iconify" data-icon="tabler:external-link"></span> View work (AVPs)</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="bg" id="volunteering">
+                <div id="section-volunteering" class="content-layout">
+                    <h2>Volunteering</h2>
+                    <div id="cardset-experience-extracurricular" class="cardset">
+                        <div class="box-sb">
+                            <div class="card-icon">
+                                <span class="icon iconify" data-icon="tabler:arrow-badge-right"></span>
+                            </div>
+                            <div class="card-detail" style="flex:1;">
+                                <div class="box-sb">
+                                    <span style="font-size: 1.25em; font-weight: bold; ">
+                                        Chairperson
+                                    </span>
+                                    <span>August 2025 – Present</span>
+                                </div>
+                                <span>
+                                    UPLB Alliance of Dormitory Associations
+                                </span>
+                                <ul>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="box-sb">
+                            <div class="card-icon">
+                                <span class="icon iconify" data-icon="tabler:arrow-badge-right"></span>
+                            </div>
+                            <div class="card-detail" style="flex:1;">
+                                <div class="box-sb">
+                                    <span style="font-size: 1.25em; font-weight: bold; ">
                                         President
                                     </span>
                                     <span>2023 – Present</span>
@@ -142,48 +212,6 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="box-sb">
-                            <div class="card-detail" style="flex:1;">
-                                <div class="box-sb">
-                                    <span style="font-size: 1.25em; text-transform: uppercase; font-weight: bold; max-width: 30em; ">
-                                        Unified XUL Platform Contributor/C++ Developer/Add-ons Team Member
-                                    </span>
-                                    <span>April 2022 – Present</span>
-                                </div>
-                                <span>
-                                    Pale Moon web browser (volunteer capacity)
-                                </span>
-                                <ul>
-                                    <li>Adapted and ported JS and CSS web features from Firefox, enhancing compatibility and functionality, which significantly improved cross-browser performance and user satisfaction.</li>
-                                    <li>Developed a custom implementation of a CSS selector from scratch, effectively resolving display issues encountered by end-users across multiple websites, leading to a more consistent user experience.</li>
-                                    <li>Conducted thorough research on legacy code to understand its complexities, ensuring seamless integration with new features and enhancing overall system performance and maintainability.</li>
-                                    <li>Reviewed submissions made by extension and theme developers to the Pale Moon Add-ons Site, ensuring adherence to quality standards and compatibility with the browser.</li>
-                                    <li>Addressed issues and reviewed pull requests related to the browser’s layout component, contributing to improved layout stability and a reduction in user-reported layout bugs.</li>
-                                </ul>
-                                <a target="_blank" href="https://repo.palemoon.org/MoonchildProductions/UXP/pulls?q=&type=all&sort=&state=&labels=&milestone=0&project=0&assignee=0&poster=16">View work <span class="iconify lha" data-icon="mdi:open-in-new"></span></a>
-                                <br/><br/>
-                            </div>
-                        </div>
-                        <div class="box-sb">
-                            <div class="card-detail" style="flex:1;">
-                                <div class="box-sb">
-                                    <div style="font-size: 1.25em; text-transform: uppercase; font-weight: bold; ">
-                                        Director for Marketing and Promotions
-                                    </div>
-                                    <span>November 2021 – August 2022</span>
-                                </div>
-                                <span>
-                                    Junior Philippine Computer Society - Asia Pacific College Chapter
-                                </span>
-                                <ul>
-                                    <li>Led the marketing and promotions team and made sure the publication materials are completed on time.</li>
-                                    <li>Designed posters and created audiovisual presentations for events and related organization activities.</li>
-                                    <li>Assisted and guided team members with questions that they may have about the publication materials.</li>
-                                    <li>Managed the social media pages of the organization on different platforms.</li>
-                                </ul>
-                                <a target="_blank" href="https://www.youtube.com/@fofajardo/search?query=AVP">View work (AVPs) <span class="iconify lha" data-icon="mdi:open-in-new"></span></a>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </section>
@@ -192,9 +220,12 @@
                     <h2>Invited Talks and Presentations</h2>
                     <div id="cardset-experience-extracurricular" class="cardset">
                         <div class="box-sb">
+                            <div class="card-icon">
+                                <span class="icon iconify" data-icon="tabler:arrow-badge-right"></span>
+                            </div>
                             <div class="card-detail" style="flex:1;">
                                 <div class="box-sb">
-                                    <span style="font-size: 1.25em; text-transform: uppercase; font-weight: bold; ">
+                                    <span style="font-size: 1.25em; font-weight: bold; ">
                                         Git Branching and Collaboration
                                     </span>
                                     <span>January 2025</span>
@@ -208,14 +239,17 @@
                                     Practical Git workflow including setup, repository management, branching, and collaboration.
                                     Overview of Git hosting, tools, and authentication.
                                 </p>
-                                <a target="_blank" href="https://www.facebook.com/JPCSAPC/posts/pfbid0siUgE4FBEfEMXS8zFStdeagJ1CafH3DjsHf6SH8Xng3xQZDudXK1h8EfQpRcVNBLl">View <span class="iconify lha" data-icon="mdi:open-in-new"></span></a>
+                                <a target="_blank" href="https://www.facebook.com/JPCSAPC/posts/pfbid0siUgE4FBEfEMXS8zFStdeagJ1CafH3DjsHf6SH8Xng3xQZDudXK1h8EfQpRcVNBLl"><span class="iconify" data-icon="tabler:external-link"></span> View</span></a>
                                 <br/><br/>
                             </div>
                         </div>
                         <div class="box-sb">
+                            <div class="card-icon">
+                                <span class="icon iconify" data-icon="tabler:arrow-badge-right"></span>
+                            </div>
                             <div class="card-detail" style="flex:1;">
                                 <div class="box-sb">
-                                    <span style="font-size: 1.25em; text-transform: uppercase; font-weight: bold; ">
+                                    <span style="font-size: 1.25em; font-weight: bold; ">
                                         SURINet: Suriin, Unawain, and Realize the Internet
                                     </span>
                                     <span>November 2024 - December 2024</span>
